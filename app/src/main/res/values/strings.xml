@@ -6,4 +6,5 @@
     <string name="notes_title">Notes</string>
     <string name="reminders_title">Reminders</string>
     <string name="lists_title">Lists</string>
+    <string name="copyright">© Jacob Goodridge</string>
 </resources>
