@@ -4,5 +4,6 @@
     <string name="reminder_button">R e m i n d e r s</string>
     <string name="list_button">L i s t s</string>
     <string name="notes_title">Notes</string>
-    <string name="notes_hint">Begin typing...</string>
+    <string name="reminders_title">Reminders</string>
+    <string name="lists_title">Lists</string>
 </resources>
