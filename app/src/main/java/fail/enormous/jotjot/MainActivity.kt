@@ -1,15 +1,20 @@
 package fail.enormous.jotjot
 
+import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
+    @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT // Force portrait mode
 
         val notesButton = findViewById<Button>(R.id.mainNotesButton)
         notesButton.setOnClickListener {
@@ -29,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         listsButton.setOnClickListener {
             val showListsActivity = Intent(this, ListsActivity::class.java)
 
-            startActivity(showListsActivity)
+            startActivity(showListsActivity) // Start lists activity
         }
 
     }
