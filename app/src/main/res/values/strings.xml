@@ -8,4 +8,9 @@
     <string name="lists_title">Lists</string>
     <string name="copyright">© Jacob Goodridge</string>
     <string name="reminder_add">New Reminder</string>
+    <string name="newRem_Title">Title</string>
+    <string name="newRem_Date">Date</string>
+    <string name="newRem_Time">Time</string>
+    <string name="pick_date">Select Date</string>
+    <string name="date_selected">Date:</string>
 </resources>

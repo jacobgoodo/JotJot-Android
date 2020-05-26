@@ -23,4 +23,50 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.022" />
 
+    <EditText
+        android:id="@+id/editReminderTitle"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/newRem_Title"
+        android:ems="10"
+        android:hint="@string/newRem_Title"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/remindersAddTitle"
+        tools:ignore="ContentDescription"
+        tools:text="@string/newRem_Title"
+        tools:visibility="visible" />
+
+    <Button
+        android:layout_width="141dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="48dp"
+        android:background="@color/ButtonColor"
+        android:fontFamily="sans-serif"
+        android:onClick="showDatePickerDialog"
+        android:text="@string/pick_date"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editReminderTitle" />
+
+    <TextView
+        android:id="@+id/text_newRem_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="9dp"
+        android:text="@string/date_selected"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editReminderTitle" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
