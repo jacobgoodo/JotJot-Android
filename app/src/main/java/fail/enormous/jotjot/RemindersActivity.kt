@@ -15,8 +15,8 @@ class RemindersActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reminders)
 
-        val reminders_addButton = findViewById<FloatingActionButton>(R.id.remindersAddButton) // Reminders Floating Action Button
-        reminders_addButton.setOnClickListener{
+        val remAddButton = findViewById<FloatingActionButton>(R.id.remindersAddButton) // Reminders Floating Action Button
+        remAddButton.setOnClickListener{
             val showRemindersAddActivity = Intent(this, RemindersAddActivity::class.java) // show RemindersAddActivity declaration
             startActivity(showRemindersAddActivity)
         }
