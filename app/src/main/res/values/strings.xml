@@ -7,4 +7,5 @@
     <string name="reminders_title">Reminders</string>
     <string name="lists_title">Lists</string>
     <string name="copyright">© Jacob Goodridge</string>
+    <string name="reminder_add">New Reminder</string>
 </resources>
