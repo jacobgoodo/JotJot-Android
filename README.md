@@ -1,4 +1,4 @@
-# JotJot-Android
+# JotJot
 Notes, reminders, and lists. Currently under construction!
 
 ### Contributing
