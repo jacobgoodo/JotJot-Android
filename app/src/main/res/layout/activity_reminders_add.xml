@@ -62,11 +62,22 @@
         android:id="@+id/text_newRem_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="18dp"
         android:layout_marginTop="9dp"
         android:text="@string/date_selected"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editReminderTitle" />
+
+    <Button
+        android:id="@+id/createButton"
+        android:layout_width="91dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="24dp"
+        android:background="@color/ButtonColor"
+        android:text="@string/button_create"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
