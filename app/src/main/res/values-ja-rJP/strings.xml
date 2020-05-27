@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="note_button">ノート</string>
+    <string name="reminder_button">リマインダー</string>
+    <string name="list_button">リスト</string>
+    <string name="notes_title">ノート</string>
+    <string name="reminders_title">リマインダー</string>
+    <string name="lists_title">リスト</string>
+    <string name="copyright">© Jacob Goodridge (グッドリッジ・ジェイコブ)</string>
+    <string name="reminder_add">新しいレマインダー</string>
+    <string name="newRem_Title">題名</string>
+    <string name="newRem_Date">日付</string>
+    <string name="newRem_Time">時間</string>
+    <string name="pick_time">時間を選ぶ</string>
+    <string name="time_selected">時間を選んだ</string>
+    <string name="date_selected">日付を選んだ</string>
+    <string name="pick_date">日付を選ぶ</string>
+    <string name="button_create">終わった</string>
+</resources>

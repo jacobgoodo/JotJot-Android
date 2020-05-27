@@ -83,8 +83,8 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="165dp"
-        android:layout_height="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
         android:text="@string/copyright"
         android:textAlignment="center"
         android:textSize="12sp"

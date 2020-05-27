@@ -3,15 +3,19 @@ package fail.enormous.jotjot
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.Dialog
+import android.app.TimePickerDialog
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
+import android.text.format.DateFormat
 import android.view.View
 import android.widget.Button
 import android.widget.DatePicker
+import android.widget.TimePicker
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
 import java.util.*
+
 
 class RemindersAddActivity : AppCompatActivity() {
 
@@ -29,12 +33,19 @@ class RemindersAddActivity : AppCompatActivity() {
             val showRemindersActivity = Intent(this, RemindersActivity::class.java)
             startActivity(showRemindersActivity) // Show reminders page
         }
+
+
     }
 
     fun showDatePickerDialog(view: View) {
         val newFragment = DatePickerFragment()
         newFragment.show(supportFragmentManager, "datePicker")
     }
+
+    fun showTimePickerDialog(view: View) {
+        TimePickerFragment().show(supportFragmentManager, "timePicker")
+    }
+
 }
 
 class DatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener {
@@ -53,5 +64,24 @@ class DatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener 
     override fun onDateSet(view: DatePicker, year: Int, month: Int, day: Int) {
         // Do something with the date chosen by the user
         // ADD FUNCTION TO ADD DATE TO DATABASE AND DISPLAY IT
+
+    }
+}
+
+class TimePickerFragment : DialogFragment(), TimePickerDialog.OnTimeSetListener {
+
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        // Use the current time as the default values for the picker
+        val c = Calendar.getInstance()
+        val hour = c.get(Calendar.HOUR_OF_DAY)
+        val minute = c.get(Calendar.MINUTE)
+
+        // Create a new instance of TimePickerDialog and return it
+        return TimePickerDialog(activity, this, hour, minute, DateFormat.is24HourFormat(activity))
+
+    }
+
+    override fun onTimeSet(view: TimePicker, hourOfDay: Int, minute: Int) {
+        // Do something with the time chosen by the user
     }
 }

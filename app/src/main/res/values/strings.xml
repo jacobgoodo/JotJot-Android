@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">JotJot</string>
+    <string name="app_name" translatable="false">JotJot</string>
     <string name="note_button">N o t e s</string>
     <string name="reminder_button">R e m i n d e r s</string>
     <string name="list_button">L i s t s</string>
@@ -12,6 +12,8 @@
     <string name="newRem_Date">Date</string>
     <string name="newRem_Time">Time</string>
     <string name="pick_date">Select Date</string>
-    <string name="date_selected">Date:</string>
+    <string name="date_selected">Selected Date:</string>
     <string name="button_create">Create</string>
+    <string name="pick_time">Select Time</string>
+    <string name="time_selected">Selected Time:</string>
 </resources>
