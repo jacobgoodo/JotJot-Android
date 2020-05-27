@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="note_button">N o t a s</string>
+    <string name="reminder_button">R e c o r d a t o r i o s</string>
+    <string name="list_button">L i s t a s</string>
+    <string name="notes_title">Notas</string>
+    <string name="reminders_title">Recordatorios</string>
+    <string name="lists_title">Listas</string>
+    <string name="copyright">© Jacob Goodridge</string>
+    <string name="reminder_add">Recordatorio Nuevo</string>
+    <string name="newRem_Title">Título</string>
+    <string name="newRem_Date">Fecha</string>
+    <string name="newRem_Time">Hora</string>
+    <string name="pick_date">Seleccione la Fecha</string>
+    <string name="date_selected">Fecha Seleccionada:</string>
+    <string name="button_create">Crear</string>
+    <string name="pick_time">Seleccione la Hora</string>
+    <string name="time_selected">Hora Seleccionada:</string>
+    <string name="credits">Agradecimientos</string>
+    <string name="translators">Traductores</string>
+    <string name="japanese">Japonés</string>
+    <string name="and">" y "</string>
+    <string name="english">Inglés</string>
+    <string name="spanish">Español</string>
+    <string name="jacob_goodridge">Jacob Goodridge</string>
+    <string name="brandon_szukalski">Brandon Szukalski</string>
+    <string name="spanish_authors">Jacob Goodridge y Brandon Szukalski</string>
+</resources>

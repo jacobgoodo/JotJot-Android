@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -35,6 +36,12 @@ class MainActivity : AppCompatActivity() {
             val showListsActivity = Intent(this, ListsActivity::class.java)
 
             startActivity(showListsActivity) // Start lists activity
+        }
+
+        val optionsButton = findViewById<ImageButton>(R.id.optionButton)
+        optionsButton.setOnClickListener{
+            val showOptionsActivity = Intent(this, OptionsActivity::class.java)
+            startActivity(showOptionsActivity)
         }
 
     }

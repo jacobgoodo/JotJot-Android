@@ -16,4 +16,13 @@
     <string name="date_selected">日付を選んだ</string>
     <string name="pick_date">日付を選ぶ</string>
     <string name="button_create">終わった</string>
+    <string name="japanese">日本語</string>
+    <string name="english">英語</string>
+    <string name="spanish">スペイン語</string>
+    <string name="jacob_goodridge">Jacob Goodridge (グッドリッジ・ジェイコブ)</string>
+    <string name="brandon_szukalski">Brandon Szukalski (スカウスキ・ブランドン)</string>
+    <string name="credits">手伝い</string>
+    <string name="translators">翻訳者</string>
+    <string name="and">と</string>
+    <string name="spanish_authors">Jacob Goodridge (グッドリッジ・ジェイコブ)とBrandon Szukalski (スカウスキ・ブランドン)</string>
 </resources>

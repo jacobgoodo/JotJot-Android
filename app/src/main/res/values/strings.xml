@@ -16,4 +16,13 @@
     <string name="button_create">Create</string>
     <string name="pick_time">Select Time</string>
     <string name="time_selected">Selected Time:</string>
+    <string name="credits">Credits</string>
+    <string name="translators">Translators</string>
+    <string name="japanese">Japanese</string>
+    <string name="english">English</string>
+    <string name="spanish">Spanish</string>
+    <string name="jacob_goodridge">Jacob Goodridge</string>
+    <string name="brandon_szukalski">Brandon Szukalski</string>
+    <string name="and">" and "</string>
+    <string name="spanish_authors">Jacob Goodridge and Brandon Szukalski</string>
 </resources>
