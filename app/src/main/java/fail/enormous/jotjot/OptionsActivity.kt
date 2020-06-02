@@ -1,8 +1,9 @@
 package fail.enormous.jotjot
 
 import android.os.Bundle
-import android.widget.TextView
+import android.webkit.WebView
 import androidx.appcompat.app.AppCompatActivity
+
 
 class OptionsActivity : AppCompatActivity() {
 
@@ -10,10 +11,8 @@ class OptionsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_options)
 
-        val englishText: TextView = findViewById(R.id.english) as TextView
-        englishText.setOnClickListener {
-            englishText.text = getString(R.string.english)
-        }
+        val browser = findViewById<WebView>(R.id.credWeb)
+        browser.loadUrl("https://enormous.fail/JotJot/credits")
 
     }
 }

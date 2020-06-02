@@ -25,4 +25,16 @@
     <string name="brandon_szukalski">Brandon Szukalski</string>
     <string name="and">" and "</string>
     <string name="spanish_authors">Jacob Goodridge and Brandon Szukalski</string>
+    <string name="CONTENTDESC_menuButton">Menu button</string>
+    <string name="add_new_task_dialog_title">Add New Task</string>
+    <string name="save">Save</string>
+    <string name="task_success">Task Added Successfully</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="update_task_dialog_title">Update Task</string>
+    <string name="mark_as_done">Mark as done</string>
+    <string name="incomplete">Not Completed</string>
+    <string name="complete">Completed</string>
+    <string name="task">Task</string>
+    <string name="deadline">Deadline</string>
 </resources>

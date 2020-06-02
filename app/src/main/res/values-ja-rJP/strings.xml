@@ -25,4 +25,7 @@
     <string name="translators">翻訳者</string>
     <string name="and">と</string>
     <string name="spanish_authors">Jacob Goodridge (グッドリッジ・ジェイコブ)とBrandon Szukalski (スカウスキ・ブランドン)</string>
+    <string name="CONTENTDESC_menuButton">メニューボタン</string>
+    <string name="add_new_task_dialog_title">新しいタスクを作る</string>
+    <string name="save">セーブ</string>
 </resources>

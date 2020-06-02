@@ -16,7 +16,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
 import java.util.*
 
-
 class RemindersAddActivity : AppCompatActivity() {
 
     @SuppressLint("SourceLockedOrientationActivity")
@@ -33,13 +32,11 @@ class RemindersAddActivity : AppCompatActivity() {
             val showRemindersActivity = Intent(this, RemindersActivity::class.java)
             startActivity(showRemindersActivity) // Show reminders page
         }
-
-
     }
 
     fun showDatePickerDialog(view: View) {
-        val newFragment = DatePickerFragment()
-        newFragment.show(supportFragmentManager, "datePicker")
+        val datePick = DatePickerFragment()
+        datePick.show(supportFragmentManager, "datePicker")
     }
 
     fun showTimePickerDialog(view: View) {
@@ -57,16 +54,21 @@ class DatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener 
         val month = c.get(Calendar.MONTH)
         val day = c.get(Calendar.DAY_OF_MONTH)
 
+
         // Create a new instance of DatePickerDialog and return it
         return DatePickerDialog(activity, this, year, month, day)
+
     }
 
     override fun onDateSet(view: DatePicker, year: Int, month: Int, day: Int) {
         // Do something with the date chosen by the user
         // ADD FUNCTION TO ADD DATE TO DATABASE AND DISPLAY IT
+        val app = AppCompatActivity()
+
 
     }
 }
+
 
 class TimePickerFragment : DialogFragment(), TimePickerDialog.OnTimeSetListener {
 
@@ -78,10 +80,9 @@ class TimePickerFragment : DialogFragment(), TimePickerDialog.OnTimeSetListener 
 
         // Create a new instance of TimePickerDialog and return it
         return TimePickerDialog(activity, this, hour, minute, DateFormat.is24HourFormat(activity))
-
     }
 
     override fun onTimeSet(view: TimePicker, hourOfDay: Int, minute: Int) {
-        // Do something with the time chosen by the user
+
     }
 }

@@ -25,4 +25,7 @@
     <string name="jacob_goodridge">Jacob Goodridge</string>
     <string name="brandon_szukalski">Brandon Szukalski</string>
     <string name="spanish_authors">Jacob Goodridge y Brandon Szukalski</string>
+    <string name="CONTENTDESC_menuButton">Botón de menú</string>
+    <string name="save">Guardar</string>
+    <string name="add_new_task_dialog_title">Añadir Nueva Tarea</string>
 </resources>
