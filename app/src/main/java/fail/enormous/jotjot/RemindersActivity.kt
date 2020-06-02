@@ -22,7 +22,7 @@ class RemindersActivity : AppCompatActivity() {
         }
     }
     override fun onBackPressed() {
-        val showMainActivity = Intent(this, ListsActivity::class.java)
+        val showMainActivity = Intent(this, MainActivity::class.java)
         startActivity(showMainActivity) // Go to MainActivity on back button press, rather than RemindersAddActivity
     }
 }
