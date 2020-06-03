@@ -8,10 +8,6 @@ import android.widget.BaseAdapter
 import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
 
-
-/**
- * Created by eunice on 04/12/2017.
- */
 class TaskListAdapter(val context: Context, private val taskList: ArrayList<Task>): BaseAdapter() {
 
     var inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -25,7 +21,7 @@ class TaskListAdapter(val context: Context, private val taskList: ArrayList<Task
             viewHolder = ViewHolder()
             viewHolder.taskDescriptionTextView = view.findViewById(R.id.task_item_description)
             viewHolder.deadlineTextView = view.findViewById(R.id.task_item_deadline)
-            viewHolder.statusTextView = view.findViewById(R.id.task_item_status)
+           // viewHolder.statusTextView = view.findViewById(R.id.task_item_status)
 
             view.tag = viewHolder
         } else {

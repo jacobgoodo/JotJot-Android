@@ -1,6 +1,7 @@
 package fail.enormous.jotjot
 
 import android.app.DialogFragment
+import android.content.pm.ActivityInfo
 import android.os.AsyncTask
 import android.os.Bundle
 import android.view.Menu
@@ -38,7 +39,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lists)
-//        this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT // Force portrait mode
+        this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT // Force portrait mode
 
         listView = findViewById(R.id.list_view)
         val listsButton = findViewById<FloatingActionButton>(R.id.listsAddButton)
