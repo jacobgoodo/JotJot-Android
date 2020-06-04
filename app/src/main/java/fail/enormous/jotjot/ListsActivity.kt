@@ -23,15 +23,10 @@ import kotlinx.android.synthetic.main.activity_lists.*
 class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogListener {
 
     private var listView: ListView? = null
-
     private var listAdapter: TaskListAdapter? = null
-
     private var todoListItems = ArrayList<Task>()
-
     private var showMenuItems = false
-
     private var selectedItem = -1
-
     private var database: AppDatabase? = null
 
 //    private var dbHelper: TodoListDBHelper = TodoListDBHelper(this)
@@ -62,12 +57,12 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
         inflater.inflate(R.menu.to_do_list_menu, menu)
         val editItem = menu.findItem(R.id.edit_item)
         val deleteItem = menu.findItem(R.id.delete_item)
-        //val completeItem = menu.findItem(R.id.mark_as_done_item)
+        val completeItem = menu.findItem(R.id.mark_as_done_item)
 
         if (showMenuItems) {
             editItem.isVisible = true
             deleteItem.isVisible = true
-           // completeItem.isVisible = true
+            completeItem.isVisible = true
         }
 
         return true
@@ -83,7 +78,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
                         R.string.update_task_dialog_title,
                         todoListItems[selectedItem].taskDetails
                     )
-                    updateFragment.show(fragmentManager, "updatetask")
+                    updateFragment.show(this.fragmentManager, "updatetask")
 
                 }
                 R.id.delete_item == item?.itemId -> {
@@ -94,10 +89,10 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
                     todoListItems.removeAt(selectedItem)
                     listAdapter?.notifyDataSetChanged()
                     selectedItem = -1
-                    Snackbar.make(listsAddButton, "Task deleted successfully", Snackbar.LENGTH_LONG).setAction("Action", null).show()
+                    Snackbar.make(listsAddButton, R.string.task_delete, Snackbar.LENGTH_LONG).setAction("Action", null).show()
 
                 }
-             /*   R.id.mark_as_done_item == item?.itemId -> {
+                R.id.mark_as_done_item == item?.itemId -> {
                     todoListItems[selectedItem].completed = true
 
                     UpdateTaskAsyncTask(database, todoListItems[selectedItem]).execute()
@@ -106,7 +101,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
 
                     Snackbar.make(listsAddButton, "Task has been marked as completed", Snackbar.LENGTH_LONG).setAction("Action", null).show()
                 }
-              */
+
             }
         }
 
@@ -144,7 +139,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
             todoListItems.add(addNewTask)
             listAdapter?.notifyDataSetChanged()
 
-            Snackbar.make(listsAddButton, "Task Added Successfully", Snackbar.LENGTH_LONG).setAction("Action", null).show()
+            Snackbar.make(listsAddButton, R.string.task_success, Snackbar.LENGTH_LONG).setAction("Action", null).show()
 
         } else if ("updatetask" == dialog.tag) {
             todoListItems[selectedItem].taskDetails = taskDetails
@@ -155,7 +150,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
 
             selectedItem = -1
 
-            Snackbar.make(listsAddButton, "Task Updated Successfully", Snackbar.LENGTH_LONG).setAction("Action", null).show()
+            Snackbar.make(listsAddButton, R.string.task_update, Snackbar.LENGTH_LONG).setAction("Action", null).show()
         }
     }
 

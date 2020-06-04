@@ -7,9 +7,6 @@ import androidx.room.Ignore
 import androidx.room.PrimaryKey
 import fail.enormous.jotjot.db.TodoListDBContract
 
-/**
- * Created by eunice on 04/12/2017.
- */
 @Entity(tableName = TodoListDBContract.TodoListItem.TABLE_NAME)
 class Task() {
 

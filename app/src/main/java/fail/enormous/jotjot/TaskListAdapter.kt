@@ -20,7 +20,7 @@ class TaskListAdapter(val context: Context, private val taskList: ArrayList<Task
             view =  inflater.inflate(R.layout.list_item_task, parent, false)
             viewHolder = ViewHolder()
             viewHolder.taskDescriptionTextView = view.findViewById(R.id.task_item_description)
-            viewHolder.deadlineTextView = view.findViewById(R.id.task_item_deadline)
+            //viewHolder.deadlineTextView = view.findViewById(R.id.task_item_deadline)
            // viewHolder.statusTextView = view.findViewById(R.id.task_item_status)
 
             view.tag = viewHolder

@@ -37,4 +37,6 @@
     <string name="complete">Completed</string>
     <string name="task">List Item</string>
     <string name="deadline" translatable="false">NOTICE: THIS STRING SHOULD NOT BE USED</string>
+    <string name="task_delete">Item deleted</string>
+    <string name="task_update">Item updated</string>
 </resources>
