@@ -26,7 +26,7 @@
     <string name="and">" and "</string>
     <string name="spanish_authors">Jacob Goodridge and Brandon Szukalski</string>
     <string name="CONTENTDESC_menuButton">Menu button</string>
-    <string name="add_new_task_dialog_title">Add New Task</string>
+    <string name="add_new_task_dialog_title">Add New Item</string>
     <string name="save">Save</string>
     <string name="task_success">Added successfully</string>
     <string name="edit">Edit</string>

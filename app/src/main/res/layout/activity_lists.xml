@@ -44,4 +44,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listsTitle" />
 
+    <ImageButton
+        android:id="@+id/delete_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/ButtonColor"
+        android:contentDescription="@string/delete"
+        app:layout_constraintBottom_toBottomOf="@+id/listsTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/listsTitle"
+        app:layout_constraintVertical_bias="0.32999998"
+        app:srcCompat="@drawable/ic_baseline_delete_24" />
+
+    <ImageButton
+        android:id="@+id/edit_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/ButtonColor"
+        android:contentDescription="@string/edit"
+        app:layout_constraintBottom_toBottomOf="@+id/listsTitle"
+        app:layout_constraintEnd_toStartOf="@+id/delete_item"
+        app:layout_constraintTop_toTopOf="@+id/listsTitle"
+        app:layout_constraintVertical_bias="0.312"
+        app:srcCompat="@drawable/ic_baseline_edit_24" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

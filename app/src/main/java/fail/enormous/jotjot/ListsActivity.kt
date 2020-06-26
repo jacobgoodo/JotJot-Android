@@ -4,9 +4,8 @@ import android.app.DialogFragment
 import android.content.pm.ActivityInfo
 import android.os.AsyncTask
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.AdapterView
+import android.widget.ImageButton
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
@@ -27,7 +26,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
     private var todoListItems = ArrayList<Task>()
     private var showMenuItems = false
     private var selectedItem = -1
-    private var database: AppDatabase? = null
+    private var database: AppDatabase? = null // declaring private variables
 
 //    private var dbHelper: TodoListDBHelper = TodoListDBHelper(this)
 
@@ -37,22 +36,30 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
         this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT // Force portrait mode
 
         listView = findViewById(R.id.list_view)
-        val listsButton = findViewById<FloatingActionButton>(R.id.listsAddButton)
+        val listsButton = findViewById<FloatingActionButton>(R.id.listsAddButton) // Find listsButton as R.id.listsAddButton
 
-        this.database = Room.databaseBuilder(applicationContext, AppDatabase::class.java, DATABASE_NAME)
+        val editButton = findViewById<ImageButton>(R.id.edit_item)
+        val deleteButton = findViewById<ImageButton>(R.id.delete_item)
+
+        this.database = Room.databaseBuilder(applicationContext, AppDatabase::class.java, DATABASE_NAME) // Defining the database
             .addMigrations(object : Migration(TodoListDBContract.DATABASE_VERSION - 1, TodoListDBContract.DATABASE_VERSION) {
-                override fun migrate(database: SupportSQLiteDatabase) {
+                override fun migrate(database: SupportSQLiteDatabase) { // use Room but support migrating  SQL
                 }
-            }).build()
+            }).build() // build database based on parameters
 
-        populateListView()
+        populateListView() // fill ListView with items from database
 
-        listsAddButton.setOnClickListener { showNewTaskUI() }
+        editButton.setOnClickListener{ editItems() }
+        deleteButton.setOnClickListener{ deleteItems() }
 
-        listView?.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id -> showUpdateTaskUI(position) }
+
+
+        listsButton.setOnClickListener { showNewTaskUI() } // call showNewTaskUI when listsButton is pressed
+        listView?.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id -> showUpdateTaskUI(position) } // set listener for when a ListView item is tapped
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+
+    /*override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater = menuInflater
         inflater.inflate(R.menu.to_do_list_menu, menu)
         val editItem = menu.findItem(R.id.edit_item)
@@ -67,8 +74,29 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
 
         return true
     }
+     */
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+    private fun editItems() {
+        if (-1 != selectedItem) {
+            val updateFragment = NewTaskDialogFragment.newInstance(
+                R.string.update_task_dialog_title,
+                todoListItems[selectedItem].taskDetails
+            )
+            updateFragment.show(this.fragmentManager, "updatetask")
+        }
+    }
+
+    private fun deleteItems() {
+            val selectedTask = todoListItems[selectedItem]
+            DeleteTaskAsyncTask(database, selectedTask).execute()
+            //                dbHelper.deleteTask(selectedTask)
+
+            todoListItems.removeAt(selectedItem)
+            listAdapter?.notifyDataSetChanged()
+            selectedItem = -1
+            Snackbar.make(listsAddButton, R.string.task_delete, Snackbar.LENGTH_LONG).setAction("Action", null).show()
+    }
+   /* override fun onOptionsItemSelected(item: MenuItem?): Boolean {
 
         if (-1 != selectedItem) {
             when {
@@ -107,7 +135,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
 
         return super.onOptionsItemSelected(item)
     }
-
+*/
 
     private fun showNewTaskUI() {
 
@@ -143,7 +171,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
 
         } else if ("updatetask" == dialog.tag) {
             todoListItems[selectedItem].taskDetails = taskDetails
-//            dbHelper.updateTask(todoListItems[selectedItem])
+            //dbHelper.updateTask(todoListItems[selectedItem])
             UpdateTaskAsyncTask(database, todoListItems[selectedItem]).execute()
 
             listAdapter?.notifyDataSetChanged()
@@ -155,6 +183,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
     }
 
     override fun onDialogNegativeClick(dialog: DialogFragment) {
+        // do nothing
     }
 
     override fun onDestroy() {

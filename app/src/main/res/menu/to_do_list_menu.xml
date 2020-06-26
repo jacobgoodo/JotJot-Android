@@ -3,12 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/edit_item"
+        android:id="@+id/edit_itemOLD"
         android:icon="@drawable/ic_baseline_edit_24"
         android:title="@string/edit"
         android:visible="false" />
     <item
-        android:id="@+id/delete_item"
+        android:id="@+id/delete_itemOLD"
         android:title="@string/delete"
         android:icon="@drawable/ic_baseline_delete_24"
         android:visible="false"
