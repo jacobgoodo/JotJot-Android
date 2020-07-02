@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package fail.enormous.jotjot
 
 import android.app.Activity
@@ -17,7 +19,7 @@ class NewTaskDialogFragment: DialogFragment() {  // 1
         fun onDialogNegativeClick(dialog: DialogFragment)
     }
 
-    var newTaskDialogListener: NewTaskDialogListener? = null  // 3
+    private var newTaskDialogListener: NewTaskDialogListener? = null  // 3
 
     // 4
     companion object {
@@ -46,25 +48,26 @@ class NewTaskDialogFragment: DialogFragment() {  // 1
 
 
         builder.setView(dialogView)
-                .setPositiveButton(R.string.save, { dialog, id ->
+                .setPositiveButton(R.string.save) { dialog, id ->
 
                     newTaskDialogListener?.onDialogPositiveClick(this, task.text.toString());
-                })
-                .setNegativeButton(android.R.string.cancel, { dialog, id ->
+                }
+            .setNegativeButton(android.R.string.cancel) { dialog, id ->
 
-                    newTaskDialogListener?.onDialogNegativeClick(this)
-                })
+                newTaskDialogListener?.onDialogNegativeClick(this)
+            }
 
         return builder.create()
     }
 
 
+    @Throws(ClassCastException::class)
     override fun onAttach(activity: Activity) {
         super.onAttach(activity)
         try {
             newTaskDialogListener = activity as NewTaskDialogListener  // 9
         } catch (e: ClassCastException) {
-            throw ClassCastException(activity.toString() + " must implement NewTaskDialogListener")
+            throw ClassCastException(activity.toString() + "NewTaskDialogListener implementation issue")
         }
 
     }

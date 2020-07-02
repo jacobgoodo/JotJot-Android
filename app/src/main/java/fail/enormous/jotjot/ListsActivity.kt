@@ -4,7 +4,6 @@ import android.app.DialogFragment
 import android.content.pm.ActivityInfo
 import android.os.AsyncTask
 import android.os.Bundle
-import android.widget.AdapterView
 import android.widget.ImageButton
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
@@ -37,7 +36,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
 
         listView = findViewById(R.id.list_view)
         val listsButton = findViewById<FloatingActionButton>(R.id.listsAddButton) // Find listsButton as R.id.listsAddButton
-
+        val lv = findViewById<ListView>(R.id.list_view)
         val editButton = findViewById<ImageButton>(R.id.edit_item)
         val deleteButton = findViewById<ImageButton>(R.id.delete_item)
 
@@ -51,11 +50,19 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
 
         editButton.setOnClickListener{ editItems() }
         deleteButton.setOnClickListener{ deleteItems() }
-
-
+       // list_view.onItemClickListener = OnItemClickListener { parent, view, position, id ->
+       //     showUpdateTaskUI(position)
+       //     print('h')
+       // }
 
         listsButton.setOnClickListener { showNewTaskUI() } // call showNewTaskUI when listsButton is pressed
-        listView?.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id -> showUpdateTaskUI(position) } // set listener for when a ListView item is tapped
+
+       /* list_view.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+            showUpdateTaskUI(selected = position) // set listener for when a ListView item is tapped
+            val selectedItem = parent.getItemAtPosition(position) as String
+            Toast.makeText(applicationContext, selectedItem, LENGTH_SHORT).show()
+        }
+        */
     }
 
 

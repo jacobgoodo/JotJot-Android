@@ -26,12 +26,11 @@ class Task() {
     @Ignore
     constructor(taskDetails: String?, taskDeadline: String?): this() {
         this.taskDetails = taskDetails
-        this.taskDeadline = taskDeadline
+        this.taskDeadline = taskDeadline // deadline has been removed
     }
 
     constructor(taskId:Long, taskDetails: String?, taskDeadline: String?, completed: Boolean) : this(taskDetails, taskDeadline) {
         this.taskId = taskId
         this.completed = completed
     }
-
 }

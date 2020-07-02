@@ -65,7 +65,7 @@ class TaskListAdapter(val context: Context, private val taskList: ArrayList<Task
 
     private class ViewHolder {
         var taskDescriptionTextView: TextView? = null
-        var deadlineTextView: TextView? = null
-        var statusTextView: TextView? = null
+       // var deadlineTextView: TextView? = null
+       // var statusTextView: TextView? = null
     }
 }

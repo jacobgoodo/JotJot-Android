@@ -41,8 +41,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="80dp"
+        android:clickable="true"
+        android:longClickable="true"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listsTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/listsTitle"
+        android:focusable="true" />
 
     <ImageButton
         android:id="@+id/delete_item"
