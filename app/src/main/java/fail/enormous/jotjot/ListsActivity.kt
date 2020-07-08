@@ -23,7 +23,6 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
     private var listView: ListView? = null
     private var listAdapter: TaskListAdapter? = null
     private var todoListItems = ArrayList<Task>()
-    private var showMenuItems = false
     private var selectedItem = -1
     private var database: AppDatabase? = null // declaring private variables
 
@@ -154,7 +153,6 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
     private fun showUpdateTaskUI(selected: Int) {
 
         selectedItem = selected
-        showMenuItems = true
         invalidateOptionsMenu()
     }
 

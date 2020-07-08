@@ -42,7 +42,6 @@ class RemindersAddActivity : AppCompatActivity() {
     fun showTimePickerDialog(view: View) {
         TimePickerFragment().show(supportFragmentManager, "timePicker")
     }
-
 }
 
 class DatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener {
@@ -63,8 +62,6 @@ class DatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener 
     override fun onDateSet(view: DatePicker, year: Int, month: Int, day: Int) {
         // Do something with the date chosen by the user
         // ADD FUNCTION TO ADD DATE TO DATABASE AND DISPLAY IT
-        val app = AppCompatActivity()
-
 
     }
 }

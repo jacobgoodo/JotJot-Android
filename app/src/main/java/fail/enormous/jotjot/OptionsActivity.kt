@@ -12,7 +12,9 @@ class OptionsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_options)
 
         val browser = findViewById<WebView>(R.id.credWeb)
+        // lazy credits because why not. BAD because requires internet and only English support TODO: offline and multilingual credits
         browser.loadUrl("https://enormous.fail/JotJot/credits")
+
 
     }
 }
