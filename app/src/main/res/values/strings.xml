@@ -39,4 +39,6 @@
     <string name="deadline" translatable="false">NOTICE: THIS STRING SHOULD NOT BE USED</string>
     <string name="task_delete">Item deleted</string>
     <string name="task_update">Item updated</string>
+    <string name="back_three_times_plural">Press back button %1$s more times to exit.</string>
+    <string name="back_three_times">Press back button %1$s more time to exit.</string>
 </resources>
