@@ -11,32 +11,33 @@ import android.widget.EditText
 
 
 
-class NewTaskDialogFragment: DialogFragment() {  // 1
+class NewTaskDialogFragment: DialogFragment() {
 
-    // 2
+    // Interface base
     interface NewTaskDialogListener {
         fun onDialogPositiveClick(dialog: DialogFragment, taskDetails: String)
         fun onDialogNegativeClick(dialog: DialogFragment)
     }
 
-    private var newTaskDialogListener: NewTaskDialogListener? = null  // 3
+    private var newTaskDialogListener: NewTaskDialogListener? = null
 
-    // 4
+    // When instance of dialogue is created
     companion object {
-        fun newInstance(title: Int, selected: String?): NewTaskDialogFragment { // 1
+        fun newInstance(title: Int, selected: String?): NewTaskDialogFragment {
 
             val newTaskDialogFragment = NewTaskDialogFragment()
             val args = Bundle()
             args.putInt("dialog_title", title)
-            args.putString("selected_item", selected) // 2
+            args.putString("selected_item", selected)
             newTaskDialogFragment.arguments = args
             return newTaskDialogFragment
         }
     }
 
+    // On dialogue popup
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val title = arguments.getInt("dialog_title")
-        val selectedText = arguments.getString("selected_item") // 1
+        val selectedText = arguments.getString("selected_item")
         val builder = AlertDialog.Builder(activity)
         builder.setTitle(title)
 
@@ -44,7 +45,7 @@ class NewTaskDialogFragment: DialogFragment() {  // 1
 
         val task = dialogView.findViewById<EditText>(R.id.task)
 
-        task.setText(selectedText)  // 2
+        task.setText(selectedText)
 
 
         builder.setView(dialogView)
@@ -60,14 +61,14 @@ class NewTaskDialogFragment: DialogFragment() {  // 1
         return builder.create()
     }
 
-
+    // Error handling
     @Throws(ClassCastException::class)
     override fun onAttach(activity: Activity) {
         super.onAttach(activity)
         try {
-            newTaskDialogListener = activity as NewTaskDialogListener  // 9
+            newTaskDialogListener = activity as NewTaskDialogListener
         } catch (e: ClassCastException) {
-            throw ClassCastException(activity.toString() + "NewTaskDialogListener implementation issue")
+            throw ClassCastException(activity.toString() + "Error in NewTaskDialogListener.kt")
         }
 
     }

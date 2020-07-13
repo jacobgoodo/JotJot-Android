@@ -200,28 +200,28 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
     private class RetrieveTasksAsyncTask(private val database: AppDatabase?) : AsyncTask<Void, Void, List<Task>>() {
 
         override fun doInBackground(vararg params: Void): List<Task>? {
-            return database?.taskDao()?.retrieveTaskList()
+            return database?.listsDao()?.retrieveTaskList()
         }
     }
 
     private class AddTaskAsyncTask(private val database: AppDatabase?, private val newTask: Task) : AsyncTask<Void, Void, Long>() {
 
         override fun doInBackground(vararg params: Void): Long? {
-            return database?.taskDao()?.addNewTask(newTask)
+            return database?.listsDao()?.addNewTask(newTask)
         }
     }
 
     private class UpdateTaskAsyncTask(private val database: AppDatabase?, private val selectedTask: Task) : AsyncTask<Void, Void, Unit>() {
 
         override fun doInBackground(vararg params: Void): Unit? {
-            return database?.taskDao()?.updateTask(selectedTask)
+            return database?.listsDao()?.updateTask(selectedTask)
         }
     }
 
     private class DeleteTaskAsyncTask(private val database: AppDatabase?, private val selectedTask: Task) : AsyncTask<Void, Void, Unit>() {
 
         override fun doInBackground(vararg params: Void): Unit? {
-            return database?.taskDao()?.deleteTask(selectedTask)
+            return database?.listsDao()?.deleteTask(selectedTask)
         }
     }
 

@@ -5,15 +5,18 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.provider.BaseColumns
+import fail.enormous.jotjot.Task
 import fail.enormous.jotjot.db.TodoListDBContract
 import fail.enormous.jotjot.db.TodoListDBContract.DATABASE_NAME
 import fail.enormous.jotjot.db.TodoListDBContract.DATABASE_VERSION
-import fail.enormous.jotjot.Task
 
 
 /**
  * Created by eunice on 03/12/2017.
  */
+
+// Modified by Jacob 2020
+
 class TodoListDBHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
 

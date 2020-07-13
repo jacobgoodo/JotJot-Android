@@ -7,7 +7,7 @@ import fail.enormous.jotjot.db.TodoListDBContract
 
 
 @Dao
-interface TaskDAO {
+interface ListsDAO {
 
     @Query("SELECT * FROM " + TodoListDBContract.TodoListItem.TABLE_NAME)
     fun retrieveTaskList(): List<Task>
