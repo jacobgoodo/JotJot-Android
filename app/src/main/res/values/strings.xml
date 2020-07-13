@@ -41,4 +41,5 @@
     <string name="task_update">Item updated</string>
     <string name="back_three_times_plural">Press back button %1$s more times to exit.</string>
     <string name="back_three_times">Press back button %1$s more time to exit.</string>
+    <string name="construction">This feature is currently being developed. It may not function as intended.</string>
 </resources>
