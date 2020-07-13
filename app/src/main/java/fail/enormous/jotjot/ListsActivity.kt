@@ -100,7 +100,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
             todoListItems.removeAt(selectedItem)
             listAdapter?.notifyDataSetChanged()
             selectedItem = -1
-            Snackbar.make(listsAddButton, R.string.task_delete, Snackbar.LENGTH_LONG).setAction("Action", null).show()
+            Snackbar.make(listsAddButton, R.string.task_delete, Snackbar.LENGTH_SHORT).setAction("Action", null).show()
     }
    /* override fun onOptionsItemSelected(item: MenuItem?): Boolean {
 
@@ -123,7 +123,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
                     todoListItems.removeAt(selectedItem)
                     listAdapter?.notifyDataSetChanged()
                     selectedItem = -1
-                    Snackbar.make(listsAddButton, R.string.task_delete, Snackbar.LENGTH_LONG).setAction("Action", null).show()
+                    Snackbar.make(listsAddButton, R.string.task_delete, Snackbar.LENGTH_SHORT).setAction("Action", null).show()
 
                 }
                 R.id.mark_as_done_item == item?.itemId -> {
@@ -133,7 +133,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
                     listAdapter?.notifyDataSetChanged()
                     selectedItem = -1
 
-                    Snackbar.make(listsAddButton, "Task has been marked as completed", Snackbar.LENGTH_LONG).setAction("Action", null).show()
+                    Snackbar.make(listsAddButton, "Task has been marked as completed", Snackbar.LENGTH_SHORT).setAction("Action", null).show()
                 }
 
             }
@@ -172,7 +172,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
             todoListItems.add(addNewTask)
             listAdapter?.notifyDataSetChanged()
 
-            Snackbar.make(listsAddButton, R.string.task_success, Snackbar.LENGTH_LONG).setAction("Action", null).show()
+            Snackbar.make(listsAddButton, R.string.task_success, Snackbar.LENGTH_SHORT).setAction("Action", null).show()
 
         } else if ("updatetask" == dialog.tag) {
             todoListItems[selectedItem].taskDetails = taskDetails
@@ -183,7 +183,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
 
             selectedItem = -1
 
-            Snackbar.make(listsAddButton, R.string.task_update, Snackbar.LENGTH_LONG).setAction("Action", null).show()
+            Snackbar.make(listsAddButton, R.string.task_update, Snackbar.LENGTH_SHORT).setAction("Action", null).show()
         }
     }
 
