@@ -24,6 +24,24 @@
         app:layout_constraintTop_toBottomOf="@+id/optionTitle" />
 
     <TextView
+        android:id="@+id/developers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/developed_by"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/credWeb" />
+
+    <TextView
         android:id="@+id/optionTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -42,8 +60,8 @@
 
     <WebView
         android:id="@+id/credWeb"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_width="378dp"
+        android:layout_height="399dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -28,4 +28,18 @@
     <string name="CONTENTDESC_menuButton">メニューボタン</string>
     <string name="add_new_task_dialog_title">新しいタスクを作る</string>
     <string name="save">セーブ</string>
+    <string name="developed_by">グッドリッジ・ジェイコブによって開発されました</string>
+    <string name="back_three_times">戻るボタンを%1$s回押して終了します。</string>
+    <string name="back_three_times_plural">戻るボタンを%1$s回押して終了します。</string>
+    <string name="construction">この機能は現在開発中ですから、意図したとおりに機能しない可能性があります。</string>
+    <string name="task_success">正常に追加された</string>
+    <string name="edit">編集</string>
+    <string name="delete">削除</string>
+    <string name="update_task_dialog_title">アップデート</string>
+    <string name="mark_as_done">完了としてマークする</string>
+    <string name="incomplete">まだ完了ない</string>
+    <string name="complete">完了</string>
+    <string name="task">リストアイテム</string>
+    <string name="task_update">アイテムはアップデートした</string>
+    <string name="task_delete">アイテムは削除した</string>
 </resources>

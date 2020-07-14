@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -37,7 +38,7 @@ class MainActivity : AppCompatActivity() {
                 RemindersActivity::class.java
             ) // showNotesActivity = Intent, run RemindersActivity.kt
 
-            startActivity(showRemindersActivity) // Start the notes page (showRemindersActivity)
+            startActivity(showRemindersActivity) // Start the reminders page (showRemindersActivity)
         }
 
         val listsButton = findViewById<Button>(R.id.mainListsButton)
@@ -55,28 +56,37 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    // Run goHome() when back is pressed 3 times TODO: Fix delay of Toast messages, commented out because they were weird
+    // Run goHome() when back is pressed 3 times
+    // TODO: Potentially change the colour of the Toast messages.
     override fun onBackPressed() {
-        if (backCounter < 2) {
-            this.backCounter += 1
-            // Debugging for when writing this function
-            Log.d("onBackPressed","backCounter is $backCounter")
-            var backtimes = 2 - backCounter
-            // Make a Toast message. In en: Press back button %1$s more times to exit.
-            //Toast.makeText(applicationContext, getString(R.string.back_three_times_plural, backtimes), Toast.LENGTH_SHORT).show()
-        }
-
-        // The same as the previous if statement, but allows for languages that specify plural. In this case - singular form
-        // For instance, Japanese isn't affected. This method allows for different languages to be easily added.
         if (backCounter < 3) {
             this.backCounter += 1
             // Debugging for when writing this function
             Log.d("onBackPressed","backCounter is $backCounter")
-            var backtimes = 2 - backCounter
-            // Make a Toast message. In en: Press back button %1$ more time to exit.
-            //Toast.makeText(applicationContext, getString(R.string.back_three_times, backtimes), Toast.LENGTH_SHORT).show()
+            var backtimes = 3 - backCounter
+
+            if (backtimes == 2) {
+                // Make a Toast message. In en: Press back button %1$s more times to exit.
+                Toast.makeText(
+                    applicationContext,
+                    getString(R.string.back_three_times_plural, backtimes),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+
+            if (backtimes == 1) {
+                // The same as the previous if statement, but allows for languages that specify plural. In this case - singular form
+                // For instance, Japanese isn't affected. This method allows for different languages to be easily added.
+                // Make a Toast message. In en: Press back button %1$ more time to exit.
+                Toast.makeText(
+                    applicationContext,
+                    getString(R.string.back_three_times, backtimes),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
         if (backCounter == 3) {
+            // Console debugging
             Log.d("onBackPressed","backCounter is $backCounter")
             // Go to home screen
             goHome()
