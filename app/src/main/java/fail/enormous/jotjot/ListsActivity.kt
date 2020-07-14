@@ -41,7 +41,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
 
         this.database = Room.databaseBuilder(applicationContext, AppDatabase::class.java, DATABASE_NAME) // Defining the database
             .addMigrations(object : Migration(TodoListDBContract.DATABASE_VERSION - 1, TodoListDBContract.DATABASE_VERSION) {
-                override fun migrate(database: SupportSQLiteDatabase) { // use Room but support migrating  SQL
+                override fun migrate(database: SupportSQLiteDatabase) { // use Room but support migrating SQL
                 }
             }).build() // build database based on parameters
 
@@ -56,31 +56,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
 
         listsButton.setOnClickListener { showNewTaskUI() } // call showNewTaskUI when listsButton is pressed
 
-       /* list_view.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
-            showUpdateTaskUI(selected = position) // set listener for when a ListView item is tapped
-            val selectedItem = parent.getItemAtPosition(position) as String
-            Toast.makeText(applicationContext, selectedItem, LENGTH_SHORT).show()
-        }
-        */
     }
-
-
-    /*override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        val inflater = menuInflater
-        inflater.inflate(R.menu.to_do_list_menu, menu)
-        val editItem = menu.findItem(R.id.edit_item)
-        val deleteItem = menu.findItem(R.id.delete_item)
-        val completeItem = menu.findItem(R.id.mark_as_done_item)
-
-        if (showMenuItems) {
-            editItem.isVisible = true
-            deleteItem.isVisible = true
-            completeItem.isVisible = true
-        }
-
-        return true
-    }
-     */
 
     private fun editItems() {
         if (-1 != selectedItem) {
@@ -102,46 +78,6 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
             selectedItem = -1
             Snackbar.make(listsAddButton, R.string.task_delete, Snackbar.LENGTH_SHORT).setAction("Action", null).show()
     }
-   /* override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-
-        if (-1 != selectedItem) {
-            when {
-                R.id.edit_item == item?.itemId -> {
-
-                    val updateFragment = NewTaskDialogFragment.newInstance(
-                        R.string.update_task_dialog_title,
-                        todoListItems[selectedItem].taskDetails
-                    )
-                    updateFragment.show(this.fragmentManager, "updatetask")
-
-                }
-                R.id.delete_item == item?.itemId -> {
-                    val selectedTask = todoListItems[selectedItem]
-                    DeleteTaskAsyncTask(database, selectedTask).execute()
-        //                dbHelper.deleteTask(selectedTask)
-
-                    todoListItems.removeAt(selectedItem)
-                    listAdapter?.notifyDataSetChanged()
-                    selectedItem = -1
-                    Snackbar.make(listsAddButton, R.string.task_delete, Snackbar.LENGTH_SHORT).setAction("Action", null).show()
-
-                }
-                R.id.mark_as_done_item == item?.itemId -> {
-                    todoListItems[selectedItem].completed = true
-
-                    UpdateTaskAsyncTask(database, todoListItems[selectedItem]).execute()
-                    listAdapter?.notifyDataSetChanged()
-                    selectedItem = -1
-
-                    Snackbar.make(listsAddButton, "Task has been marked as completed", Snackbar.LENGTH_SHORT).setAction("Action", null).show()
-                }
-
-            }
-        }
-
-        return super.onOptionsItemSelected(item)
-    }
-*/
 
     private fun showNewTaskUI() {
 

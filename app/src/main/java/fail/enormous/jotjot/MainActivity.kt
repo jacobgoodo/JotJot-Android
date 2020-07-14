@@ -58,12 +58,13 @@ class MainActivity : AppCompatActivity() {
 
     // Run goHome() when back is pressed 3 times
     // TODO: Potentially change the colour of the Toast messages.
+    @SuppressLint("StringFormatMatches") // Pesky Android Studio syntax error suppression -> the app works fine this way
     override fun onBackPressed() {
         if (backCounter < 3) {
             this.backCounter += 1
             // Debugging for when writing this function
             Log.d("onBackPressed","backCounter is $backCounter")
-            var backtimes = 3 - backCounter
+            val backtimes = 3 - backCounter // val as the way backtimes is defined doesn't change -- the variable backCounter changes which is defined in the val
 
             if (backtimes == 2) {
                 // Make a Toast message. In en: Press back button %1$s more times to exit.
@@ -93,7 +94,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // Go to home screen
+    // Go to home screen function
     private fun goHome() {
         val gohome = Intent(Intent.ACTION_MAIN)
         gohome.addCategory(Intent.CATEGORY_HOME)
