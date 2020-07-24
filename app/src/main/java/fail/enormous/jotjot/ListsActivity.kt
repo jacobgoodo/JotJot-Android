@@ -65,7 +65,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
             OnItemLongClickListener { _, _, currentItem, _ ->
                 selectedItem = currentItem
                 Log.v("ListView long press", "pos: $selectedItem")
-                deleteItems()
+                return deleteItems(selectedItem)
             }
 
     }
@@ -75,7 +75,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
 
     }
 
-    private fun deleteItems(selectedItem): Boolean {
+    private fun deleteItems(selectedItem: Int): Boolean {
 
         val selectedTask = todoListItems[selectedItem]
         DeleteTaskAsyncTask(database, selectedTask).execute()
