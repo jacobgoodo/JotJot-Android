@@ -5,8 +5,7 @@ import android.content.pm.ActivityInfo
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import android.widget.CheckBox
+import android.widget.AdapterView.OnItemLongClickListener
 import android.widget.ImageButton
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
@@ -51,7 +50,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
                 TodoListDBContract.DATABASE_VERSION - 1,
                 TodoListDBContract.DATABASE_VERSION
             ) {
-                override fun migrate(database: SupportSQLiteDatabase) { // use Room but support migrating SQL
+                override fun migrate(database: SupportSQLiteDatabase) { // use Room (which stores as SQL database because Google wants it that way)
                 }
             }).build() // build database based on parameters
 
@@ -60,6 +59,13 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
         editButton.setOnClickListener { editItems() }
         deleteButton.setOnClickListener { deleteItems() }
         listsButton.setOnClickListener { showNewTaskUI() } // call showNewTaskUI when listsButton is pressed
+
+        // When a ListView item is long-pressed
+        lv.onItemLongClickListener =
+            OnItemLongClickListener { _, _, selectedItem, _ -> // TODO Auto-generated method stub
+                Log.v("ListView long press", "pos: $selectedItem")
+                true
+            }
 
     }
 
@@ -163,23 +169,6 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
 
         override fun doInBackground(vararg params: Void): Unit? {
             return database?.listsDao()?.deleteTask(selectedTask)
-        }
-    }
-
-    fun onCheckboxClicked(view: View) {
-        if (view is CheckBox) {
-            val checked: Boolean = view.isChecked
-
-            when (view.id) {
-                R.id.item_checkbox -> {
-                    if (checked) {
-                        Log.d("Checkbox", "CHECKED")
-                        
-                    } else {
-                        Log.d("Checkbox", "UNCHECKED")
-                    }
-                }
-            }
         }
     }
 }

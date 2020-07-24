@@ -19,10 +19,12 @@ class TaskListAdapter(val context: Context, private val taskList: ArrayList<Task
             view =  inflater.inflate(R.layout.list_item_task, parent, false)
             viewHolder = ViewHolder()
             viewHolder.taskDescriptionTextView = view.findViewById(R.id.task_item_description)
-
             view.tag = viewHolder
+
+
         } else {
             viewHolder = view.tag as ViewHolder?
+
         }
 
         val taskDescriptionTextView = viewHolder?.taskDescriptionTextView
