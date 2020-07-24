@@ -5,6 +5,7 @@ import android.content.pm.ActivityInfo
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
+import android.widget.AdapterView
 import android.widget.AdapterView.OnItemLongClickListener
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
@@ -58,7 +59,6 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
        // editButton.setOnClickListener { editItems() }
         // deleteButton.setOnClickListener { deleteItems() }
         listsButton.setOnClickListener { showNewTaskUI() } // call showNewTaskUI when listsButton is pressed
-
         // When a ListView item is long-pressed
         lv.onItemLongClickListener =
             OnItemLongClickListener { _, _, currentItem, _ ->
@@ -66,18 +66,26 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
                 Log.v("ListView long press", "pos: $selectedItem")
                 deleteItems(selectedItem)
             }
+        // When a ListView item is tapped
+        lv.onItemClickListener =
+            AdapterView.OnItemClickListener { _, _, currentItem, _ ->
+                selectedItem = currentItem
+                Log.v("ListView tap", "pos: $selectedItem")
+                editItems(selectedItem)
+            }
 
     }
 
-    private fun editItems() {
-
-
+    private fun editItems(selectedItem: Int): Boolean  {
+        val updateFragment = NewTaskDialogFragment.newInstance(R.string.edit, todoListItems[selectedItem].taskDetails)
+        updateFragment.show(fragmentManager, "updatetask")
+        return true
     }
 
     private fun deleteItems(selectedItem: Int): Boolean {
         // selectedTask = value of selectedItem (long-pressed in ListView)
         val selectedTask = todoListItems[selectedItem]
-        // execute a deletion of the long-pressed item
+        // Execute a deletion of the long-pressed item
         DeleteTaskAsyncTask(database, selectedTask).execute()
         // Remove from the ArrayList
         todoListItems.removeAt(selectedItem)
@@ -93,17 +101,11 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
     }
 
     private fun showNewTaskUI() {
-
         val newFragment =
             NewTaskDialogFragment.newInstance(R.string.add_new_task_dialog_title, null)
         newFragment.show(fragmentManager, "newtask")
     }
 
-    private fun showUpdateTaskUI(selected: Int) {
-
-        selectedItem = selected
-        invalidateOptionsMenu()
-    }
 
     private fun populateListView() {
         todoListItems = RetrieveTasksAsyncTask(database).execute().get() as ArrayList<Task>
