@@ -57,12 +57,13 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
         populateListView() // fill ListView with items from database
 
         editButton.setOnClickListener { editItems() }
-        deleteButton.setOnClickListener { deleteItems() }
+        // deleteButton.setOnClickListener { deleteItems() }
         listsButton.setOnClickListener { showNewTaskUI() } // call showNewTaskUI when listsButton is pressed
 
         // When a ListView item is long-pressed
         lv.onItemLongClickListener =
-            OnItemLongClickListener { _, _, selectedItem, _ -> // TODO Auto-generated method stub
+            OnItemLongClickListener { _, _, currentItem, _ ->
+                selectedItem = currentItem
                 Log.v("ListView long press", "pos: $selectedItem")
                 deleteItems()
             }
@@ -74,7 +75,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
 
     }
 
-    private fun deleteItems(): Boolean {
+    private fun deleteItems(selectedItem: Int): Boolean {
 
         val selectedTask = todoListItems[selectedItem]
         DeleteTaskAsyncTask(database, selectedTask).execute()
@@ -82,7 +83,8 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
 
         todoListItems.removeAt(selectedItem)
         listAdapter?.notifyDataSetChanged()
-        selectedItem = -1
+        // Reset selectedItem to impossible value
+        this.selectedItem = -1
         // Display deleted item snackbar
         Snackbar.make(listsAddButton, R.string.task_delete, Snackbar.LENGTH_SHORT)
             .setAction("Action", null).show()
