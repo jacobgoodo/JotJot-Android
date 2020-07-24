@@ -75,18 +75,20 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
     }
 
     private fun deleteItems(selectedItem: Int): Boolean {
-
+        // selectedTask = value of selectedItem (long-pressed in ListView)
         val selectedTask = todoListItems[selectedItem]
+        // execute a deletion of the long-pressed item
         DeleteTaskAsyncTask(database, selectedTask).execute()
-        //TodoListDBHelper.deleteTask(selectedTask)
-
+        // Remove from the ArrayList
         todoListItems.removeAt(selectedItem)
+        // Connect to the Adapter, indicating a change of data (ListView needs to be updated)
         listAdapter?.notifyDataSetChanged()
         // Reset selectedItem to impossible value
         this.selectedItem = -1
         // Display deleted item snackbar
         Snackbar.make(listsAddButton, R.string.task_delete, Snackbar.LENGTH_SHORT)
             .setAction("Action", null).show()
+        // Return true because this needs a Boolean to work, Android Studio gets a bit angry and won't compile otherwise
         return true
     }
 
