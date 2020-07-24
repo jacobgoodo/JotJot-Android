@@ -88,7 +88,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
         // Display deleted item snackbar
         Snackbar.make(listsAddButton, R.string.task_delete, Snackbar.LENGTH_SHORT)
             .setAction("Action", null).show()
-        return deleteItems(selectedItem)
+        return true
     }
 
     private fun showNewTaskUI() {
