@@ -77,8 +77,10 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
     }
 
     private fun editItems(selectedItem: Int): Boolean  {
+        // Show the dialogue (same as create) but with the purpose of updating the list item
         val updateFragment = NewTaskDialogFragment.newInstance(R.string.edit, todoListItems[selectedItem].taskDetails)
         updateFragment.show(fragmentManager, "updatetask")
+        // Return true, Boolean value (for the same reason explained in deleteItems()
         return true
     }
 
@@ -142,12 +144,6 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
     override fun onDialogNegativeClick(dialog: DialogFragment) {
         // Do nothing
     }
-
-    override fun onDestroy() {
-//        dbHelper.close()
-        super.onDestroy()
-    }
-
 
     private class RetrieveTasksAsyncTask(private val database: AppDatabase?) :
         AsyncTask<Void, Void, List<Task>>() {

@@ -42,4 +42,6 @@
     <string name="task">リストアイテム</string>
     <string name="task_update">アイテムはアップデートした</string>
     <string name="task_delete">アイテムは削除した</string>
+    <string name="note_add">新しいノート</string>
+    <string name="title">題名</string>
 </resources>

@@ -26,7 +26,7 @@
     <string name="and">" and "</string>
     <string name="spanish_authors">Jacob Goodridge and Brandon Szukalski</string>
     <string name="CONTENTDESC_menuButton">Menu button</string>
-    <string name="add_new_task_dialog_title">Add New Item</string>
+    <string name="add_new_task_dialog_title">Add new item</string>
     <string name="save">Save</string>
     <string name="task_success">Added successfully</string>
     <string name="edit">Edit</string>
@@ -44,4 +44,6 @@
     <string name="construction">This feature is currently being developed. It may not function as intended.</string>
     <string name="developed_by">Developed by Jacob Goodridge</string>
     <string name="variable" translatable="false">%1$s</string>
+    <string name="note_add">New Note</string>
+    <string name="title">Title</string>
 </resources>

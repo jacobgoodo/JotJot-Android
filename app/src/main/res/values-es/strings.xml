@@ -27,5 +27,5 @@
     <string name="spanish_authors">Jacob Goodridge y Brandon Szukalski</string>
     <string name="CONTENTDESC_menuButton">Botón de menú</string>
     <string name="save">Guardar</string>
-    <string name="add_new_task_dialog_title">Añadir Nueva Tarea</string>
+    <string name="add_new_task_dialog_title">Añadir nueva tarea</string>
 </resources>

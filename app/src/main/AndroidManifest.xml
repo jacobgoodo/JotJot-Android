@@ -10,10 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".NotesAddActivity"></activity>
         <activity android:name=".OptionsActivity" />
         <activity android:name=".RemindersAddActivity" />
-        <activity android:name=".ListsActivity">
-        </activity>
+        <activity android:name=".ListsActivity"></activity>
         <activity android:name=".NotesActivity" />
         <activity android:name=".RemindersActivity" />
         <activity android:name=".MainActivity">

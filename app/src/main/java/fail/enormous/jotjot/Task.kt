@@ -24,7 +24,6 @@ class Task() {
     var completed: Boolean? = false
 
     @Ignore
-    // deadline has been removed, keeping this constructor just in-case
     constructor(taskDetails: String?, taskDeadline: String?): this() {
         this.taskDetails = taskDetails
         this.taskDeadline = taskDeadline

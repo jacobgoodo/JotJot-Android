@@ -41,7 +41,7 @@ class NewTaskDialogFragment: DialogFragment() {
         val builder = AlertDialog.Builder(activity)
         builder.setTitle(title)
 
-        val dialogView = activity.layoutInflater.inflate(R.layout.dialog_new_task, null)
+        val dialogView = activity.layoutInflater.inflate(R.layout.dialogue_new_task, null)
 
         val task = dialogView.findViewById<EditText>(R.id.task)
 
