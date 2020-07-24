@@ -41,7 +41,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
         val editButton = findViewById<ImageButton>(R.id.edit_item)
         val deleteButton = findViewById<ImageButton>(R.id.delete_item)
 
-        this.database = Room.databaseBuilder(
+        database = Room.databaseBuilder(
             applicationContext,
             AppDatabase::class.java,
             DATABASE_NAME
@@ -64,7 +64,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
         lv.onItemLongClickListener =
             OnItemLongClickListener { _, _, selectedItem, _ -> // TODO Auto-generated method stub
                 Log.v("ListView long press", "pos: $selectedItem")
-                true
+                deleteItems()
             }
 
     }
@@ -74,11 +74,19 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
 
     }
 
-    private fun deleteItems() {
+    private fun deleteItems(): Boolean {
 
+        val selectedTask = todoListItems[selectedItem]
+        DeleteTaskAsyncTask(database, selectedTask).execute()
+        //TodoListDBHelper.deleteTask(selectedTask)
+
+        todoListItems.removeAt(selectedItem)
+        listAdapter?.notifyDataSetChanged()
+        selectedItem = -1
         // Display deleted item snackbar
         Snackbar.make(listsAddButton, R.string.task_delete, Snackbar.LENGTH_SHORT)
             .setAction("Action", null).show()
+        return true
     }
 
     private fun showNewTaskUI() {
