@@ -2,6 +2,9 @@ package fail.enormous.jotjot.db
 
 import android.provider.BaseColumns
 
+// NB: Why is it called To Do List when it's Lists in the app? Well,
+// To Do List did not fit the simplistic design, so the name was shortened
+// to match with the rest off JotJot :)
 
 object TodoListDBContract {
 

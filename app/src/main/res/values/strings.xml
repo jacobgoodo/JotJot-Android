@@ -36,11 +36,12 @@
     <string name="incomplete">Not Completed</string>
     <string name="complete">Completed</string>
     <string name="task">List Item</string>
-    <string name="deadline" translatable="false">NOTICE: OBSOLETE STRING</string>
+    <string name="deadline" translatable="false">NOTICE: STRING ERROR</string>
     <string name="task_delete">Item deleted</string>
     <string name="task_update">Item updated</string>
     <string name="back_three_times_plural">Press back button %1$s more times to exit.</string>
     <string name="back_three_times">Press back button %1$s more time to exit.</string>
     <string name="construction">This feature is currently being developed. It may not function as intended.</string>
     <string name="developed_by">Developed by Jacob Goodridge</string>
+    <string name="variable" translatable="false">%1$s</string>
 </resources>

@@ -7,6 +7,24 @@
     tools:context=".RemindersAddActivity">
 
     <TextView
+        android:id="@+id/rewRem_timeSel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/variable"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/text_newRem_time"
+        app:layout_constraintTop_toBottomOf="@+id/text_newRem_time" />
+
+    <TextView
+        android:id="@+id/rewRem_dateSel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/variable"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/text_newRem_date"
+        app:layout_constraintTop_toBottomOf="@+id/text_newRem_date" />
+
+    <TextView
         android:id="@+id/remindersAddTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -44,11 +62,13 @@
         tools:text="@string/newRem_Title"
         tools:visibility="visible" />
 
+
     <Button
         android:id="@+id/selectTimeButton"
         android:layout_width="141dp"
         android:layout_height="35dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
         android:background="@color/ButtonColor"
         android:fontFamily="sans-serif"
         android:onClick="showTimePickerDialog"
@@ -56,22 +76,20 @@
         android:textAllCaps="false"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectDateButton" />
-
+        app:layout_constraintTop_toBottomOf="@+id/editReminderTitle" />
 
     <Button
         android:id="@+id/selectDateButton"
         android:layout_width="141dp"
         android:layout_height="35dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         android:background="@color/ButtonColor"
         android:fontFamily="sans-serif"
         android:onClick="showDatePickerDialog"
         android:text="@string/pick_date"
         android:textAllCaps="false"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editReminderTitle" />
 
@@ -79,23 +97,21 @@
         android:id="@+id/text_newRem_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:text="@string/date_selected"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editReminderTitle" />
+        app:layout_constraintStart_toStartOf="@+id/selectDateButton"
+        app:layout_constraintTop_toBottomOf="@+id/selectDateButton" />
 
     <TextView
         android:id="@+id/text_newRem_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:text="@string/time_selected"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_newRem_date" />
+        app:layout_constraintStart_toStartOf="@+id/selectTimeButton"
+        app:layout_constraintTop_toBottomOf="@+id/selectTimeButton" />
 
     <Button
         android:id="@+id/createButton"

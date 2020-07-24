@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 
 class MainActivity : AppCompatActivity() {
-    private var backCounter = 0 // set backCounter to 0, used in onBackPressed()
+    private var backCounter = 0 // set backCounter to 0, used in onBackPressed() to call goHome()
 
     @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     // Run goHome() when back is pressed 3 times
-    // TODO: Potentially change the colour of the Toast messages.
+    // TODO: Potentially change the colour of the Toast messages. Requires custom Toasts
     @SuppressLint("StringFormatMatches") // Pesky Android Studio syntax error suppression -> the app works fine this way
     override fun onBackPressed() {
         if (backCounter < 3) {

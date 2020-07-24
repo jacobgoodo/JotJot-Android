@@ -34,10 +34,11 @@ class RemindersAddActivity : AppCompatActivity() {
         }
     }
 
-    // these two functions are called from button presses, due to  android:onClick in activity_reminders_add.xml
+    // These two functions are called from button presses, due to  android:onClick in activity_reminders_add.xml
     fun showDatePickerDialog(view: View) {
         val datePick = DatePickerFragment()
         datePick.show(supportFragmentManager, "datePicker")
+
     }
 
     fun showTimePickerDialog(view: View) {

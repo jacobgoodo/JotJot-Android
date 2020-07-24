@@ -19,9 +19,6 @@ class TaskListAdapter(val context: Context, private val taskList: ArrayList<Task
             view =  inflater.inflate(R.layout.list_item_task, parent, false)
             viewHolder = ViewHolder()
             viewHolder.taskDescriptionTextView = view.findViewById(R.id.task_item_description)
-            // Obsolete deadlines and completion status. Decided that this goes against the simplistic concept
-            //viewHolder.deadlineTextView = view.findViewById(R.id.task_item_deadline)
-           // viewHolder.statusTextView = view.findViewById(R.id.task_item_status)
 
             view.tag = viewHolder
         } else {
@@ -29,25 +26,10 @@ class TaskListAdapter(val context: Context, private val taskList: ArrayList<Task
         }
 
         val taskDescriptionTextView = viewHolder?.taskDescriptionTextView
-        //val deadlineTextView = viewHolder?.deadlineTextView
-        //val statusTextView = viewHolder?.statusTextView
 
         val task = getItem(position) as Task
 
         taskDescriptionTextView?.text = task.taskDetails
-        /*
-        OBSOLETE - Removed deadlines :(
-        deadlineTextView?.text = task.taskDeadline
-        if (null != task.completed && true == task.completed) {
-            statusTextView?.text = (context.getString(R.string.complete))
-            statusTextView?.setTextColor(ResourcesCompat.getColor(context.resources, android.R.color.holo_green_light, null))
-
-        } else {
-            statusTextView?.text = (context.getString(R.string.incomplete))
-            statusTextView?.setTextColor(ResourcesCompat.getColor(context.resources, android.R.color.holo_red_light, null))
-        }
-        */
-
         return view
     }
 
