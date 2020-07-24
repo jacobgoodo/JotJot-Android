@@ -27,7 +27,6 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
     private var todoListItems = ArrayList<Task>()
     private var database: AppDatabase? = null // declaring private variables
 
-//    private var dbHelper: TodoListDBHelper = TodoListDBHelper(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -10,13 +10,14 @@
         android:id="@+id/notesCreateButton"
         android:layout_width="91dp"
         android:layout_height="39dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
         android:background="@color/colorPrimary"
         android:text="@string/button_create"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:onClick="createNote"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/notesAddTitle"
@@ -43,14 +44,17 @@
         android:layout_marginTop="32dp"
         android:contentDescription="@string/title"
         android:ems="10"
+        android:fontFamily="sans-serif-medium"
         android:hint="@string/title"
         android:inputType="textPersonName"
+        android:textColor="#BE000000"
+        android:typeface="normal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/notesAddTitle"
         tools:text="@string/title" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine"
+        android:id="@+id/note_content"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -58,6 +62,7 @@
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:gravity="start|top"
+        android:hint="@string/note"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

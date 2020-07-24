@@ -46,4 +46,5 @@
     <string name="variable" translatable="false">%1$s</string>
     <string name="note_add">New Note</string>
     <string name="title">Title</string>
+    <string name="note">Note</string>
 </resources>
