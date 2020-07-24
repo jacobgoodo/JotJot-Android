@@ -75,7 +75,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
 
     }
 
-    private fun deleteItems(selectedItem: Int): Boolean {
+    private fun deleteItems(selectedItem): Boolean {
 
         val selectedTask = todoListItems[selectedItem]
         DeleteTaskAsyncTask(database, selectedTask).execute()
@@ -88,7 +88,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
         // Display deleted item snackbar
         Snackbar.make(listsAddButton, R.string.task_delete, Snackbar.LENGTH_SHORT)
             .setAction("Action", null).show()
-        return true
+        return deleteItems(selectedItem)
     }
 
     private fun showNewTaskUI() {
