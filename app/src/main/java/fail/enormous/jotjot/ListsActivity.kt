@@ -6,7 +6,6 @@ import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
 import android.widget.AdapterView.OnItemLongClickListener
-import android.widget.ImageButton
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
@@ -38,8 +37,8 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
         val listsButton =
             findViewById<FloatingActionButton>(R.id.listsAddButton) // Find listsButton as R.id.listsAddButton
         val lv = findViewById<ListView>(R.id.list_view)
-        val editButton = findViewById<ImageButton>(R.id.edit_item)
-        val deleteButton = findViewById<ImageButton>(R.id.delete_item)
+        //val editButton = findViewById<ImageButton>(R.id.edit_item)
+        //val deleteButton = findViewById<ImageButton>(R.id.delete_item)
 
         database = Room.databaseBuilder(
             applicationContext,
@@ -56,7 +55,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
 
         populateListView() // fill ListView with items from database
 
-        editButton.setOnClickListener { editItems() }
+       // editButton.setOnClickListener { editItems() }
         // deleteButton.setOnClickListener { deleteItems() }
         listsButton.setOnClickListener { showNewTaskUI() } // call showNewTaskUI when listsButton is pressed
 
@@ -65,7 +64,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
             OnItemLongClickListener { _, _, currentItem, _ ->
                 selectedItem = currentItem
                 Log.v("ListView long press", "pos: $selectedItem")
-                return deleteItems(selectedItem)
+                deleteItems(selectedItem)
             }
 
     }

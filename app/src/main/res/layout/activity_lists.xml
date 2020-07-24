@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ListsActivity">
 
-    <TextView
+    <!--TextView
         android:id="@+id/construction_message3"
         android:layout_width="362dp"
         android:layout_height="33dp"
@@ -18,7 +18,7 @@
         app:layout_constraintHorizontal_bias="0.382"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.499" /-->
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/listsAddButton"
@@ -61,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/listsTitle"
         android:focusable="true" />
 
-    <ImageButton
+    <!--ImageButton
         android:id="@+id/delete_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -74,9 +74,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/listsTitle"
         app:layout_constraintVertical_bias="0.32999998"
-        app:srcCompat="@drawable/ic_baseline_delete_24" />
+        app:srcCompat="@drawable/ic_baseline_delete_24" /-->
 
-    <ImageButton
+    <!--ImageButton
         android:id="@+id/edit_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
         app:layout_constraintEnd_toStartOf="@+id/delete_item"
         app:layout_constraintTop_toTopOf="@+id/listsTitle"
         app:layout_constraintVertical_bias="0.312"
-        app:srcCompat="@drawable/ic_baseline_edit_24" />
+        app:srcCompat="@drawable/ic_baseline_edit_24" /-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
