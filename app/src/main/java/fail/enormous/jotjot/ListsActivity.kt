@@ -55,8 +55,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
 
         populateListView() // fill ListView with items from database
 
-       // editButton.setOnClickListener { editItems() }
-        // deleteButton.setOnClickListener { deleteItems() }
+
         listsButton.setOnClickListener { showNewTaskUI() } // call showNewTaskUI when listsButton is pressed
         // When a ListView item is long-pressed
         lv.onItemLongClickListener =

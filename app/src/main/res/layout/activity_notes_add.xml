@@ -51,7 +51,8 @@
         android:typeface="normal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/notesAddTitle"
-        tools:text="@string/title" />
+        tools:text="@string/title"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/note_content"
@@ -66,6 +67,7 @@
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/note_title" />
+        app:layout_constraintTop_toBottomOf="@+id/note_title"
+        android:importantForAutofill="no" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
