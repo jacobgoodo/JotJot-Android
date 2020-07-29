@@ -4,7 +4,7 @@ import android.provider.BaseColumns
 
 object NotesDBContract {
 
-        const val DATABASE_VERSION = 2
+        const val DATABASE_VERSION = 3
         const val DATABASE_NAME = "notes_db"
 
     class NotesItem: BaseColumns {

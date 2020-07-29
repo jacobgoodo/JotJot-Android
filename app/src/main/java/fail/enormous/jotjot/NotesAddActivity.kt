@@ -12,7 +12,6 @@ import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.google.android.material.snackbar.Snackbar
 import fail.enormous.jotjot.db.NotesDBContract
-import fail.enormous.jotjot.db.TodoListDBContract
 import fail.enormous.jotjot.db.room.AppDatabaseNotes
 import kotlinx.android.synthetic.main.activity_lists.*
 
@@ -29,7 +28,7 @@ class NotesAddActivity : AppCompatActivity() {
         notesDatabase = Room.databaseBuilder(
             applicationContext,
             AppDatabaseNotes::class.java,
-            TodoListDBContract.DATABASE_NAME
+            NotesDBContract.DATABASE_NAME
         ) // Defining the database
             .addMigrations(object : Migration(
                 NotesDBContract.DATABASE_VERSION - 1,
@@ -42,9 +41,9 @@ class NotesAddActivity : AppCompatActivity() {
     }
 
     // createNote() defined by android:onClick
-    fun createNote(view: View) {
-        val titleTex = findViewById<EditText>(R.id.note_title)
-        val contentTex = findViewById<EditText>(R.id.note_content)
+    fun createNote(view: View) : Boolean {
+        val titleTex = this@NotesAddActivity.findViewById<EditText>(R.id.note_title)
+        val contentTex = this@NotesAddActivity.findViewById<EditText>(R.id.note_content)
 
         // Defining values for the text entered into each EditText
         val noteTitle = titleTex.text.toString()
@@ -53,6 +52,7 @@ class NotesAddActivity : AppCompatActivity() {
         Log.d("Content", noteContent)
 
         addNoteToDatabase(noteTitle, noteContent)
+        return true
     }
 
     private fun addNoteToDatabase(noteTitle: String, noteContent: String) {
@@ -60,7 +60,9 @@ class NotesAddActivity : AppCompatActivity() {
         val addNewNoteDesc = Note(noteContent, "")
 
         addNewNote.noteId = AddNoteAsyncTask(notesDatabase, addNewNote).execute().get()
+        addNewNoteDesc.noteId = AddNoteAsyncTask(notesDatabase, addNewNoteDesc).execute().get()
         notesItems.add(addNewNote)
+        notesItems.add(addNewNoteDesc)
         listAdapter?.notifyDataSetChanged()
 
         Snackbar.make(listsAddButton, R.string.task_success, Snackbar.LENGTH_SHORT)
