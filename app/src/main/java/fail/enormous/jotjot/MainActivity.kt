@@ -100,8 +100,12 @@ class MainActivity : AppCompatActivity() {
         gohome.addCategory(Intent.CATEGORY_HOME)
         gohome.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         // Reset back counter
-        backCounter = 0
+        resetBackCount()
         // Run the gohome Intent -> home screen
         startActivity(gohome)
+    }
+
+    private fun resetBackCount() {
+        backCounter = 0
     }
 }

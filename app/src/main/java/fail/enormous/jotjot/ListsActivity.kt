@@ -40,6 +40,8 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
         //val editButton = findViewById<ImageButton>(R.id.edit_item)
         //val deleteButton = findViewById<ImageButton>(R.id.delete_item)
 
+        // HERE MainActivity.resetBackCount()
+
         database = Room.databaseBuilder(
             applicationContext,
             AppDatabase::class.java,
@@ -61,7 +63,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
         lv.onItemLongClickListener =
             OnItemLongClickListener { _, _, currentItem, _ ->
                 selectedItem = currentItem
-                Log.v("ListView long press", "pos: $selectedItem")
+                Log.v("ListView long-press", "pos: $selectedItem")
                 deleteItems(selectedItem)
             }
         // When a ListView item is tapped
