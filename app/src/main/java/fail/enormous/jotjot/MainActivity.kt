@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        resetBackCount() // Reset backCounter to 0, if it isn't already
         this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT // Force portrait mode
 
         val notesButton = findViewById<Button>(R.id.mainNotesButton)
@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity() {
         optionsButton.setOnClickListener {
             val showOptionsActivity = Intent(this, OptionsActivity::class.java)
             startActivity(showOptionsActivity)
+            // Show the options menu by pressing the button.
         }
 
     }

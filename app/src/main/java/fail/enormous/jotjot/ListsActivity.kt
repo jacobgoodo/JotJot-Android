@@ -40,8 +40,6 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
         //val editButton = findViewById<ImageButton>(R.id.edit_item)
         //val deleteButton = findViewById<ImageButton>(R.id.delete_item)
 
-        // HERE MainActivity.resetBackCount()
-
         database = Room.databaseBuilder(
             applicationContext,
             AppDatabase::class.java,
