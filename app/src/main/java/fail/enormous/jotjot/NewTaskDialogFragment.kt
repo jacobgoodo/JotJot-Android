@@ -68,7 +68,7 @@ class NewTaskDialogFragment: DialogFragment() {
         try {
             newTaskDialogListener = activity as NewTaskDialogListener
         } catch (e: ClassCastException) {
-            throw ClassCastException(activity.toString() + "Error in NewTaskDialogListener.kt")
+            throw ClassCastException(activity.toString() + "Error in NewTaskDialogListener")
         }
 
     }
