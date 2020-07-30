@@ -1,5 +1,6 @@
 package fail.enormous.jotjot
 
+import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.AsyncTask
 import android.os.Bundle
@@ -10,10 +11,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.google.android.material.snackbar.Snackbar
 import fail.enormous.jotjot.db.NotesDBContract
 import fail.enormous.jotjot.db.room.AppDatabaseNotes
-import kotlinx.android.synthetic.main.activity_lists.*
 
 class NotesAddActivity : AppCompatActivity() {
     private var notesDatabase: AppDatabaseNotes? = null
@@ -51,7 +50,8 @@ class NotesAddActivity : AppCompatActivity() {
         Log.d("Title", noteTitle)
         Log.d("Content", noteContent)
 
-        addNoteToDatabase(noteTitle, noteContent)
+        addNoteToDatabase(noteTitle, noteContent) // Add note to database
+        startActivity(Intent(this, NotesActivity::class.java)) // Go back to notes list
         return true
     }
 
@@ -65,8 +65,8 @@ class NotesAddActivity : AppCompatActivity() {
         notesItems.add(addNewNoteDesc)
         listAdapter?.notifyDataSetChanged()
 
-        Snackbar.make(listsAddButton, R.string.task_success, Snackbar.LENGTH_SHORT)
-            .setAction("Action", null).show()
+       // Snackbar.make(notesAddButton, R.string.task_success, Snackbar.LENGTH_SHORT)
+        //    .setAction("Action", null).show()
     }
 
     private class AddNoteAsyncTask(private val database: AppDatabaseNotes?, private val newNote: Note) :

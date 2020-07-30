@@ -52,6 +52,5 @@ class NotesListAdapter(val context: Context, private val noteList: ArrayList<Not
     private class ViewHolder {
         var noteTitleTextView: TextView? = null
         var noteContentTextView: TextView? = null
-       // var statusTextView: TextView? = null
     }
 }
