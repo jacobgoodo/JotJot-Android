@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
@@ -54,6 +55,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(showOptionsActivity)
             // Show the options menu by pressing the button.
         }
+
+
 
     }
 
