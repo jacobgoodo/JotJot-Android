@@ -23,6 +23,7 @@ class NotesActivity : AppCompatActivity() {
         this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT // Force portrait mode
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notes)
+        listView = findViewById(R.id.notes_list_view)
 
         // Database stuffs - as declared in NotesAddActivity
         // Would be best implemented globally but Android isn't liking when I try and do that :(
@@ -43,12 +44,8 @@ class NotesActivity : AppCompatActivity() {
         notesAddButton.setOnClickListener{
             val showNotesAddActivity = Intent(this, NotesAddActivity::class.java) // show RemindersAddActivity declaration
             startActivity(showNotesAddActivity)
-
-            populateListView() // fill ListView with items from database
-
-            listView = findViewById(R.id.notes_list_view)
-
         }
+        populateListView() // fill ListView with items from database
     }
 
     override fun onBackPressed() {

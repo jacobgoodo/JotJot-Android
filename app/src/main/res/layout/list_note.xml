@@ -37,22 +37,4 @@
         android:textColor="#000000"
         android:textSize="18sp" />
 
-    <!--TextView
-        android:id="@+id/task_item_status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_alignParentEnd="true"
-        android:textSize="16sp"
-        android:textColor="@android:color/holo_green_light"
-        android:text="@string/complete"/-->
-
-    <!--TextView
-        android:id="@+id/task_item_deadline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_below="@id/task_item_description"
-        android:textSize="16sp"
-        android:text="@string/deadline"/-->
 </RelativeLayout>

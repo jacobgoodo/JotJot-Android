@@ -65,8 +65,6 @@ class NotesAddActivity : AppCompatActivity() {
         notesItems.add(addNewNoteDesc)
         listAdapter?.notifyDataSetChanged()
 
-       // Snackbar.make(notesAddButton, R.string.task_success, Snackbar.LENGTH_SHORT)
-        //    .setAction("Action", null).show()
     }
 
     private class AddNoteAsyncTask(private val database: AppDatabaseNotes?, private val newNote: Note) :
@@ -76,16 +74,5 @@ class NotesAddActivity : AppCompatActivity() {
             return database?.notesDao()?.addNewNote(newNote)
         }
     }
-
-   /* private class AddNoteAsyncTask(
-        private val notesDatabase: AppDatabaseNotes?,
-        private val newNote: Note
-    ) :
-        AsyncTask<Void, Void, Long>() {
-
-        override fun doInBackground(vararg params: Void): Long? {
-            return notesDatabase?.notesDao()?.addNewNote(newNote)
-        }
-    } */
 }
 
