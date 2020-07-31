@@ -5,15 +5,16 @@ import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 
 class MainActivity : AppCompatActivity() {
     private var backCounter = 0 // set backCounter to 0, used in onBackPressed() to call goHome()
+    private var tapCounter = 0 // Tap of the JotJot icon
 
     @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,8 +56,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(showOptionsActivity)
             // Show the options menu by pressing the button.
         }
-
-
 
     }
 
@@ -111,5 +110,18 @@ class MainActivity : AppCompatActivity() {
 
     private fun resetBackCount() {
         backCounter = 0
+        tapCounter = 0
+    }
+
+    // This is the super-secret menu
+    fun LogoPress(view: View) {
+        tapCounter += 1
+        if (tapCounter == 10) {
+            val showSecretActivity = Intent(this, SecretActivity::class.java)
+            // Reset counters
+            resetBackCount()
+            // Run the activity
+            startActivity(showSecretActivity)
+        }
     }
 }
