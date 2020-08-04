@@ -80,7 +80,7 @@ class NotesActivity : AppCompatActivity() {
         // selectedTask = value of selectedItem (long-pressed in ListView)
         val selectedTask = notesItems[selectedItem]
         // Execute a deletion of the long-pressed item
-        NotesActivity.DeleteTaskAsyncTask(notesDatabase, selectedTask).execute()
+       // NotesActivity.DeleteTaskAsyncTask(notesDatabase, selectedTask).execute()
         // Remove from the ArrayList
         notesItems.removeAt(selectedItem)
         // Connect to the Adapter, indicating a change of data (ListView needs to be updated)
