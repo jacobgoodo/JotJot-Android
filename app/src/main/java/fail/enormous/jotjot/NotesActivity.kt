@@ -15,7 +15,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import fail.enormous.jotjot.db.NotesDBContract
 import fail.enormous.jotjot.db.room.AppDatabaseNotes
-import kotlinx.android.synthetic.main.activity_lists.*
+import kotlinx.android.synthetic.main.activity_notes.*
 
 class NotesActivity : AppCompatActivity() {
     private var notesDatabase: AppDatabaseNotes? = null
@@ -88,7 +88,7 @@ class NotesActivity : AppCompatActivity() {
         // Reset selectedItem to impossible value
         this.selectedItem = -1
         // Display deleted item snackbar
-        Snackbar.make(listsAddButton, R.string.task_delete, Snackbar.LENGTH_SHORT)
+        Snackbar.make(notesAddButton, R.string.task_delete, Snackbar.LENGTH_SHORT)
             .setAction("Action", null).show()
         // Return true because this needs a Boolean to work, Android Studio gets a bit angry and won't compile otherwise
         return true
