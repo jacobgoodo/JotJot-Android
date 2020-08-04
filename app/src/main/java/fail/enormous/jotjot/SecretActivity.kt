@@ -12,7 +12,7 @@ class SecretActivity : AppCompatActivity() {
 
         val browser = findViewById<WebView>(R.id.hh)
         val showMainActivity = Intent(this, MainActivity::class.java)
-        browser.loadUrl("https://www.youtube.com/watch?v=WXxV9g7lsFE&t=9s") // Shawty's got a melody in my head
+        browser.loadUrl("https://www.youtube.com/watch?v=WXxV9g7lsFE&t=10s") // Shawty's got a melody in my head
         startActivity(showMainActivity)
     }
 }
