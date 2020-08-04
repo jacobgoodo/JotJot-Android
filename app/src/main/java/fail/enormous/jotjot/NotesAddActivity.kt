@@ -41,8 +41,8 @@ class NotesAddActivity : AppCompatActivity() {
 
     // createNote() defined by android:onClick
     fun createNote(view: View) : Boolean {
-        val titleTex = this@NotesAddActivity.findViewById<EditText>(R.id.note_title)
-        val contentTex = this@NotesAddActivity.findViewById<EditText>(R.id.note_content)
+        val titleTex = this.findViewById<EditText>(R.id.note_title)
+        val contentTex = this.findViewById<EditText>(R.id.note_content)
 
         // Defining values for the text entered into each EditText
         val noteTitle = titleTex.text.toString()

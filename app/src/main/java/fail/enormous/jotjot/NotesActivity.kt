@@ -113,6 +113,7 @@ class NotesActivity : AppCompatActivity() {
         }
     }
 
+    /*
     private class DeleteTaskAsyncTask(
         private val database: AppDatabaseNotes?,
         private val selectedItem: Note
@@ -121,6 +122,6 @@ class NotesActivity : AppCompatActivity() {
         override fun doInBackground(vararg params: Void): Unit? {
             return database?.notesDao()?.deleteNote(selectedItem)
         }
-    }
+    } */
 
 }

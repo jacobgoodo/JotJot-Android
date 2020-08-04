@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity() {
                 this,
                 NotesActivity::class.java
             ) // showNotesActivity = Intent, run NotesActivity.kt
-
             startActivity(showNotesActivity) // Start the notes page (showNotesActivity)
         }
 
