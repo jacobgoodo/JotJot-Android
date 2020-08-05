@@ -76,11 +76,12 @@ class NotesActivity : AppCompatActivity() {
         return true
     }
 
-    private fun deleteItems(selectedItem: Int): Boolean {
+   /* private fun deleteItems(selectedItem: Int): Boolean {
         // selectedTask = value of selectedItem (long-pressed in ListView)
         val selectedTask = notesItems[selectedItem]
         // Execute a deletion of the long-pressed item
-       // NotesActivity.DeleteTaskAsyncTask(notesDatabase, selectedTask).execute()
+        //NotesActivity.
+        DeleteTaskAsyncTask(notesDatabase, selectedTask).execute()
         // Remove from the ArrayList
         notesItems.removeAt(selectedItem)
         // Connect to the Adapter, indicating a change of data (ListView needs to be updated)
@@ -92,7 +93,7 @@ class NotesActivity : AppCompatActivity() {
             .setAction("Action", null).show()
         // Return true because this needs a Boolean to work, Android Studio gets a bit angry and won't compile otherwise
         return true
-    }
+    } */
 
     override fun onBackPressed() {
         val showMainActivity = Intent(this, MainActivity::class.java)
@@ -113,7 +114,7 @@ class NotesActivity : AppCompatActivity() {
         }
     }
 
-    /*
+
     private class DeleteTaskAsyncTask(
         private val database: AppDatabaseNotes?,
         private val selectedItem: Note
@@ -122,6 +123,6 @@ class NotesActivity : AppCompatActivity() {
         override fun doInBackground(vararg params: Void): Unit? {
             return database?.notesDao()?.deleteNote(selectedItem)
         }
-    } */
+    }
 
 }
