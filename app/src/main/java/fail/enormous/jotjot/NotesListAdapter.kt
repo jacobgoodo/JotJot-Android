@@ -16,7 +16,7 @@ class NotesListAdapter(val context: Context, private val noteList: ArrayList<Not
         var view = convertView
         val viewHolder: ViewHolder?
         if (view == null) {
-            view =  inflater.inflate(R.layout.list_item_task, parent, false)
+            view =  inflater.inflate(R.layout.list_note, parent, false)
             viewHolder = ViewHolder()
             viewHolder.noteTitleTextView = view.findViewById(R.id.note_item_title)
             viewHolder.noteContentTextView = view.findViewById(R.id.note_item_content)

@@ -1,5 +1,6 @@
 package fail.enormous.jotjot
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.AsyncTask
@@ -22,6 +23,7 @@ class NotesActivity : AppCompatActivity() {
     private var listView: ListView? = null
     private var selectedItem = -1 // Make selectedItem a value BELOW anything possible 😎
 
+    @SuppressLint("LongLogTag") // IDE stuffs - it doesn't matter if my logs are long :(
     override fun onCreate(savedInstanceState: Bundle?) {
         this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT // Force portrait mode
         super.onCreate(savedInstanceState)
@@ -56,14 +58,14 @@ class NotesActivity : AppCompatActivity() {
         lv.onItemLongClickListener =
             AdapterView.OnItemLongClickListener { _, _, currentItem, _ ->
                 selectedItem = currentItem
-                Log.v("ListView long-press", "pos: $selectedItem")
+                Log.v("ListView (Notes) long-press", "pos: $selectedItem")
                deleteItems(selectedItem)
             }
         // When a ListView item is tapped
         lv.onItemClickListener =
             AdapterView.OnItemClickListener { _, _, currentItem, _ ->
                 selectedItem = currentItem
-                Log.v("ListView tap", "pos: $selectedItem")
+                Log.v("ListView (Notes) tap", "pos: $selectedItem")
                 editItems(selectedItem)
             }
 
