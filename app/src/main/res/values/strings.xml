@@ -32,9 +32,9 @@
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
     <string name="update_task_dialog_title">Update</string>
-    <string name="mark_as_done">Mark as done</string>
-    <string name="incomplete">Not Completed</string>
-    <string name="complete">Completed</string>
+    <string name="mark_as_done" translatable="false">Mark as done</string>
+    <string name="incomplete" translatable="false">Not Completed</string>
+    <string name="complete" translatable="false">Completed</string>
     <string name="task">List Item</string>
     <string name="deadline" translatable="false">NOTICE: STRING ERROR</string>
     <string name="task_delete">Item deleted</string>

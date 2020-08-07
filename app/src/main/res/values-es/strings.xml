@@ -27,5 +27,19 @@
     <string name="spanish_authors">Jacob Goodridge y Brandon Szukalski</string>
     <string name="CONTENTDESC_menuButton">Botón de menú</string>
     <string name="save">Guardar</string>
-    <string name="add_new_task_dialog_title">Añadir nueva tarea</string>
+    <string name="add_new_task_dialog_title">Lista nueva tarea</string>
+    <string name="delete">Eliminar</string>
+    <string name="task_success">Añadido con éxito</string>
+    <string name="edit">Edita</string>
+    <string name="update_task_dialog_title">Actualizar</string>
+    <string name="task">Elemento de Lista</string>
+    <string name="task_delete">Artículo eliminado</string>
+    <string name="task_update">Artículo actualizado</string>
+    <string name="construction">Esta característica se está desarrollando actualmente. Puede que no funcione como se pretende.</string>
+    <string name="developed_by">Desarrollado por Jacob Goodridge</string>
+    <string name="note_add">Nueva Nota</string>
+    <string name="title">Título</string>
+    <string name="note">Nota</string>
+    <string name="back_three_times_plural">Apretar el boton para salir %1$s veces mas a salir</string>
+    <string name="back_three_times">Apretar el boton para salir %1$s vece mas a salir.</string>
 </resources>
