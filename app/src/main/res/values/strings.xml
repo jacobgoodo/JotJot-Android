@@ -48,4 +48,5 @@
     <string name="title">Title</string>
     <string name="note">Note</string>
     <string name="note_delete">Note deleted</string>
+    <string name="note_edit">Edit Note</string>
 </resources>

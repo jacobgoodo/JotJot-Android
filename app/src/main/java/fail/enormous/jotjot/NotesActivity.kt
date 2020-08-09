@@ -74,7 +74,10 @@ class NotesActivity : AppCompatActivity() {
     }
 
     private fun editItems(selectedItem: Int): Boolean  {
-        // TODO: Edit function
+        // Open NotesEditActivity and pass the selectedItem variable
+        val intent = Intent(this, NotesEditActivity::class.java)
+        intent.putExtra("selectedItem", selectedItem)
+        startActivity(intent)
         return true
     }
 

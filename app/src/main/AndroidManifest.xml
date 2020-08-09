@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SecretActivity"></activity>
+        <activity android:name=".NotesEditActivity"></activity>
+        <activity android:name=".SecretActivity" />
         <activity android:name=".NotesAddActivity" />
         <activity android:name=".OptionsActivity" />
         <activity android:name=".RemindersAddActivity" />
