@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
 import androidx.room.migration.Migration
@@ -66,6 +67,13 @@ class NotesEditActivity : AppCompatActivity() {
 
     private fun editNote(selectedItem: Int) {
         Log.d("Editing note", selectedItem.toString())
+        val titleTex = this.findViewById<EditText>(R.id.note_title)
+        val contentTex = this.findViewById<EditText>(R.id.note_content)
+        val noteTitle = titleTex.text.toString()
+        val noteContent = contentTex.text.toString()
+
+        notesItems[selectedItem].noteTitle = noteTitle
+        notesItems[selectedItem].noteInfo = noteContent
 
         NotesActivity.UpdateNotesAsyncTask(notesDatabase, notesItems[selectedItem]).execute()
         listAdapter?.notifyDataSetChanged()
