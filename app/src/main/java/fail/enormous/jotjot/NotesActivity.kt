@@ -86,7 +86,7 @@ class NotesActivity : AppCompatActivity() {
         val selectedNote = notesItems[selectedItem]
         // Execute a deletion of the long-pressed item
         //NotesActivity.
-        DeleteTaskAsyncTask(notesDatabase, selectedNote).execute()
+        DeleteNotesAsyncTask(notesDatabase, selectedNote).execute()
         // Remove from the ArrayList
         notesItems.removeAt(selectedItem)
         // Connect to the Adapter, indicating a change of data (ListView needs to be updated)
@@ -112,7 +112,7 @@ class NotesActivity : AppCompatActivity() {
         listView?.adapter = listAdapter
     }
 
-    private class RetrieveNotesAsyncTask(private val database: AppDatabaseNotes?) :
+    class RetrieveNotesAsyncTask(private val database: AppDatabaseNotes?) :
         AsyncTask<Void, Void, List<Note>>() {
 
         override fun doInBackground(vararg params: Void): List<Note>? {
@@ -120,8 +120,17 @@ class NotesActivity : AppCompatActivity() {
         }
     }
 
+    class UpdateNotesAsyncTask(
+        private val database: AppDatabaseNotes?,
+        private val selectedItem: Note
+    ) : AsyncTask<Void, Void, Unit>() {
 
-    private class DeleteTaskAsyncTask(
+        override fun doInBackground(vararg params: Void): Unit? {
+            return database?.notesDao()?.updateNote(selectedItem)
+        }
+    }
+
+    private class DeleteNotesAsyncTask(
         private val database: AppDatabaseNotes?,
         private val selectedItem: Note
     ) : AsyncTask<Void, Void, Unit>() {

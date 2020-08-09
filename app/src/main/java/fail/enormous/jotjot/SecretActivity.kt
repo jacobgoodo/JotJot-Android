@@ -23,4 +23,5 @@ class SecretActivity : AppCompatActivity() {
         // Quickly load MainAcivity before YouTube is opened
         startActivity(showMainActivity)
     }
+
 }

@@ -1,18 +1,21 @@
 package fail.enormous.jotjot
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import fail.enormous.jotjot.db.NotesDBContract
 import fail.enormous.jotjot.db.room.AppDatabaseNotes
+import kotlinx.android.synthetic.main.activity_notes_edit.*
 
 class NotesEditActivity : AppCompatActivity() {
     private var notesDatabase: AppDatabaseNotes? = null
     private var notesItems = ArrayList<Note>()
+    private var listAdapter: NotesListAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,10 +27,12 @@ class NotesEditActivity : AppCompatActivity() {
         val selectedItem = intent.getIntExtra("selectedItem", -1)
         Log.d("Selected", selectedItem.toString())
 
-        val noteTitle = notesItems[selectedItem].noteTitle
-        val noteInfo = notesItems[selectedItem].noteInfo
-        Log.d("noteTitle", noteTitle)
-        Log.d("noteInfo", noteInfo)
+        // Display the text of Note tapped on
+        displayText(selectedItem)
+
+        findViewById<Button>(R.id.notesEditButton).setOnClickListener{
+            editNote(selectedItem)
+        }
     }
 
     private fun buildDatabase() {
@@ -45,7 +50,25 @@ class NotesEditActivity : AppCompatActivity() {
             }).build() // build database based on parameters
     }
 
-    fun editNote(view: View) {
-        // TODO: stuff when button is pressed
+    private fun displayText(selectedItem: Int) {
+        // Ask the database for the title and info of the note and define them
+        notesItems =
+            NotesActivity.RetrieveNotesAsyncTask(notesDatabase).execute().get() as ArrayList<Note>
+        val noteTitle = notesItems[selectedItem].noteTitle
+        val noteInfo = notesItems[selectedItem].noteInfo
+        Log.d("noteTitle", noteTitle)
+        Log.d("noteInfo", noteInfo)
+
+        // Set the text of each EditText as the variables retrieved from database
+        note_title.setText(noteTitle)
+        note_content.setText(noteInfo)
+    }
+
+    private fun editNote(selectedItem: Int) {
+        Log.d("Editing note", selectedItem.toString())
+
+        NotesActivity.UpdateNotesAsyncTask(notesDatabase, notesItems[selectedItem]).execute()
+        listAdapter?.notifyDataSetChanged()
+        startActivity(Intent(this, NotesActivity::class.java))
     }
 }
