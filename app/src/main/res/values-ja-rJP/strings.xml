@@ -45,4 +45,5 @@
     <string name="note_add">新しいノート</string>
     <string name="title">題名</string>
     <string name="note">ノート</string>
+    <string name="note_delete">ノートは削除した</string>
 </resources>

@@ -49,7 +49,7 @@ class ListsActivity : AppCompatActivity(), NewTaskDialogFragment.NewTaskDialogLi
                 TodoListDBContract.DATABASE_VERSION - 1,
                 TodoListDBContract.DATABASE_VERSION
             ) {
-                override fun migrate(database: SupportSQLiteDatabase) { // use Room (which stores as SQL database because Google wants it that way)
+                override fun migrate(database: SupportSQLiteDatabase) { // use Room (which technically stores as SQL database because Google wants it that way with Room - making life difficult)
                 }
             }).build() // build database based on parameters
 

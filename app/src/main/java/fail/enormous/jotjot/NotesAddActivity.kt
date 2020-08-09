@@ -56,13 +56,10 @@ class NotesAddActivity : AppCompatActivity() {
     }
 
     private fun addNoteToDatabase(noteTitle: String, noteContent: String) {
-        val addNewNote = Note(noteTitle, "")
-        val addNewNoteDesc = Note(noteContent, "")
+        val newNote = Note(noteTitle, noteContent)
 
-        addNewNote.noteId = AddNoteAsyncTask(notesDatabase, addNewNote).execute().get()
-        addNewNoteDesc.noteId = AddNoteAsyncTask(notesDatabase, addNewNoteDesc).execute().get()
-        notesItems.add(addNewNote)
-        notesItems.add(addNewNoteDesc)
+        newNote.noteId = AddNoteAsyncTask(notesDatabase, newNote).execute().get()
+        notesItems.add(newNote)
         listAdapter?.notifyDataSetChanged()
 
     }

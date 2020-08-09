@@ -13,8 +13,10 @@ import androidx.room.Room
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
 import fail.enormous.jotjot.db.NotesDBContract
 import fail.enormous.jotjot.db.room.AppDatabaseNotes
+import kotlinx.android.synthetic.main.activity_notes.*
 
 class NotesActivity : AppCompatActivity() {
     private var notesDatabase: AppDatabaseNotes? = null
@@ -76,12 +78,12 @@ class NotesActivity : AppCompatActivity() {
         return true
     }
 
-    private fun deleteItems(selectedItem: Int): Boolean { /*
+    private fun deleteItems(selectedItem: Int): Boolean {
         // selectedTask = value of selectedItem (long-pressed in ListView)
-        val selectedTask = notesItems[selectedItem]
+        val selectedNote = notesItems[selectedItem]
         // Execute a deletion of the long-pressed item
         //NotesActivity.
-        DeleteTaskAsyncTask(notesDatabase, selectedTask).execute()
+        DeleteTaskAsyncTask(notesDatabase, selectedNote).execute()
         // Remove from the ArrayList
         notesItems.removeAt(selectedItem)
         // Connect to the Adapter, indicating a change of data (ListView needs to be updated)
@@ -89,10 +91,9 @@ class NotesActivity : AppCompatActivity() {
         // Reset selectedItem to impossible value
         this.selectedItem = -1
         // Display deleted item snackbar
-        Snackbar.make(notesAddButton, R.string.task_delete, Snackbar.LENGTH_SHORT)
+        Snackbar.make(notesAddButton, R.string.note_delete, Snackbar.LENGTH_SHORT)
             .setAction("Action", null).show()
         // Return true because this needs a Boolean to work, Android Studio gets a bit angry and won't compile otherwise
-        */
         return true
 
     }
