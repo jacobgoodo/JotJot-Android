@@ -48,9 +48,9 @@ class NotesActivity : AppCompatActivity() {
                 }
             }).build()
 
-        val notesAddButton = findViewById<FloatingActionButton>(R.id.notesAddButton) // Reminders Floating Action Button
+        val notesAddButton = findViewById<FloatingActionButton>(R.id.notesAddButton) // Notes Floating Action Button
         notesAddButton.setOnClickListener{
-            val showNotesAddActivity = Intent(this, NotesAddActivity::class.java) // show RemindersAddActivity declaration
+            val showNotesAddActivity = Intent(this, NotesAddActivity::class.java) // show NotesAddActivity declaration
             startActivity(showNotesAddActivity)
         }
         populateListView() // fill ListView with items from database
